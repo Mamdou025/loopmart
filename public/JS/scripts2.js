@@ -5,3 +5,16 @@ $(window).on('scroll load', function() {
         $(".fixed-top").removeClass("top-nav-collapse");
     }
   });
+
+
+  // jQuery for page scrolling feature - requires jQuery Easing plugin
+	$(function() {
+		$(document).on('click', 'a.page-scroll', function(event) {
+            console.log('openened')
+			var $anchor = $(this);
+			$('html, body').stop().animate({
+				scrollTop: $($anchor.attr('href')).offset().top
+			}, 600, 'easeInOutExpo');
+			event.preventDefault();
+		});
+	});
