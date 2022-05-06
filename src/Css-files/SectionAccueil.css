@@ -1,0 +1,62 @@
+
+
+
+
+.sectionaccueil {
+    align-items: flex-start;
+   background: linear-gradient(rgba(236, 232, 189, 0.616),rgba(131, 190, 21, 0.726));;
+   position: relative;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: flex;
+    height: 300px;
+    left: 0;
+    width: 100%;
+    padding: 20px 37px;
+    position: relative;
+    top: 0;
+  }
+  .coloricon{
+    color: white;
+  }
+  .overlap-group {
+    position: relative;
+    align-items: center;
+    background:rgba(255, 255, 255, 0.829);
+    background-size: 100% 100%;
+    display: flex;
+    height: 80px;
+    width: 50%;
+    min-width: 300px;
+    padding: 0 23px;
+    border-radius:  25px;
+    margin: 100px auto;
+    box-shadow: 1px 4px 3px #666364b2;;
+  }
+  
+  .rectangle-66 {
+    background-color: 
+  #000000;
+    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+  }
+
+  .rectangle-66:hover {
+    background-color: 
+  #2daa07;
+    border-radius: 20px;
+    height: 50px;
+    width: 50px;
+  }
+
+
+  .inputtext{
+      width: 70%;
+      background-color: transparent;
+      margin: 0 auto;
+      height: 50px;
+      border-radius: 10px;
+      font-size: larger;
+
+  }

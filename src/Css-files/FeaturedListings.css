@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500");
+
+
+#icaj{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.rowl{
+  display:flex;
+  justify-content:flex-start;
+  align-items:stretch;
+  flex-wrap:nowrap;
+  padding:10px;
+}
+.cell{
+  min-height:75px;
+  flex-grow:1;
+  flex-basis:100%;
+}
+#ibhs{
+  flex-basis:100%;
+}
+@media (max-width: 768px){
+  .rowl{
+    flex-wrap:wrap;
+  }
+}

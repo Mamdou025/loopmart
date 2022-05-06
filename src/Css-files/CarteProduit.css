@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500");
+
+
+.listeproduits{
+  position: relative;
+  
+
+}
+.font-weight-normal{
+  padding: 1px;
+  font-size: small;
+}
+
+.plus{
+  padding: 2px;
+  margin: 5px;
+  font-size: small;
+
+}
+
+.carteproduit {
+  align-items: center;
+  background:linear-gradient(rgb(118,149,147,100%),rgb(255, 255, 255));
+  background-size: 100% 100%;
+  flex-direction: column;
+  width: 100%;
+  max-width: 450px;
+  max-height: 450px;
+
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 2px 3px #88888877;
+  margin-top: 80px;
+  
+
+}
+
+
+
+.carteproduit:hover {
+    background:linear-gradient(rgb(228, 206, 10),rgb(20, 206, 14));
+    box-shadow: 4px 4px #888888b7;
+    transition: 0.3s;
+  }
+
+
+
+
+.rectangle {
+  max-height: 316px;
+  height: 300px;
+  
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+}
+
+
+
+.viva {
+  height: 20px;
+  letter-spacing: 0;
+  margin-left: 135px;
+  margin-top: 0.17px;
+  width: 44px;
+}
+
+.profil {
+  height: 32px;
+  object-fit: cover;
+  width: 32px;
+  border-radius: 100%;
+  margin: 1px;
+  padding: 2px;
+  box-shadow: 1px 1px #888888de;
+
+}
+
+.seller{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+
+}
+.auteur{
+    text-align: start;
+    font-size: small;
+}
+
+
+
+
+
+/*SECONDS ELEMENTS */
+.carteproduit2 {
+  align-items: center;
+  background:linear-gradient(rgb(118,149,147,100%),rgb(236,178,17,100%));
+  background-size: 100% 100%;
+  width: 90%;
+  min-width: 170px;
+  max-height: 250px;
+  margin: 2px auto;
+
+
+  border-radius: 20px;
+  box-shadow: 2px 3px #88888877;
+  
+
+}
+.bigbloc .carteproduit2 {
+  align-items: center;
+  background:linear-gradient(rgb(118,149,147,100%),rgba(223, 178, 53, 0.753));
+  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 2px 3px #88888877;
+  
+
+}
+.bigbloc .rectangle2 {
+  height: 500px;
+  padding: 5px;
+  
+  
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+  
+
+}
+
+
+
+
+
+.carteproduit2:hover {
+  background:linear-gradient(rgb(118,149,147,100%),rgb(206, 155, 14));
+  box-shadow: 4px 4px #888888b7;
+  transition: 0.3s;
+}
+
+.rectangle2 {
+  height: 200px;
+  
+  
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+}
+
+
+/*SECONDS ELEMENTS FIN*/
+
+
+
+
+
+
+/*third ELEMENTS */
+.carteproduit3 {
+  align-items: center;
+  background:linear-gradient(rgb(118,149,147,100%),rgb(236,178,17,100%));
+  background-size: 100% 100%;
+  width: 100%;
+  
+
+  border-radius: 20px;
+  box-shadow: 2px 3px #88888877;
+  
+
+}
+.rowl .carteproduit3 {
+  align-items: center;
+  background:linear-gradient(rgb(118,149,147,100%),rgba(223, 178, 53, 0.753));
+  width: 100%;
+  margin: 0 auto;
+
+  border-radius: 20px;
+  box-shadow: 2px 3px #88888877;
+  
+
+}
+.rowl .rectangle3 {
+  height: 480px;
+  
+  
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+  
+
+}
+
+
+
+
+
+.carteproduit3:hover {
+  background:linear-gradient(rgb(118,149,147,100%),rgb(206, 155, 14));
+  box-shadow: 4px 4px #888888b7;
+  transition: 0.3s;
+}
+
+.rectangle2 {
+  height: 200px;
+  
+  
+  object-fit: cover;
+  width: 100%;
+  border-radius: 20px;
+}
+
+
+/*third ELEMENTS FIN*/
