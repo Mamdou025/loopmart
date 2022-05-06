@@ -5,7 +5,8 @@
 }
 .navigation{
   background-color: rgba(255, 255, 255, 0);
-  
+  transition: all 0.1s ease-out;
+
   padding: 1px 10%;
 
 }
@@ -22,12 +23,17 @@
   transition: 0.2s;
 }
 
+.top-nav-collapse{
+  transition: all 0.3s ease-in ;
 
+
+}
 
 
 .navbar.navbar-expand-lg.navbar-dark.navbar-custom.fixed-top.navigation.top-nav-collapse {
   background-color: white;
   box-shadow: 0px 2px 2px #66636470;
+
 }
 
 .navbar-dark .navbar-toggler {

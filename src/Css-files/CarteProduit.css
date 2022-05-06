@@ -38,7 +38,7 @@
 
 
 .carteproduit:hover {
-    background:linear-gradient(rgb(228, 206, 10),rgb(20, 206, 14));
+    background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(20, 206, 14, 0.562));
     box-shadow: 4px 4px #888888b7;
     transition: 0.3s;
   }
