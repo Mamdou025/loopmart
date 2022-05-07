@@ -29,13 +29,14 @@ export const images =[
   { src:"https://images.unsplash.com/photo-1563529427727-cb7f13f3a756?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80" , auteur:'Tournesol', montant:45, profil:"https://images.unsplash.com/photo-1628890920690-9e29d0019b9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" ,description:"quo minus id quod maxime"},
   { src:"https://images.unsplash.com/photo-1563559983710-47af8035e4be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80" , auteur:'Tournesol', montant:45, profil:"https://images.unsplash.com/photo-1628890923662-2cb23c2e0cfe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" ,description:"eiciendis voluptatibus maiores alias consequatur"},                      
   { src:"https://images.unsplash.com/photo-1561641377-f7456d23aa9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80" , auteur:'Verre', montant:25, profil:"https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" ,description:"eiciendis alias consequatur"},                      
-            
+  { src:"https://images.unsplash.com/photo-1559181567-c3190ca9959b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" , auteur:'Framb', montant:15, profil:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" ,description:"turvoluptatem accusantium "},                      
+         
 
   ]
 
   export const Navbarl={links:["Panier        ","Collections           ","Nouveautés    "],logo:"https://i.ibb.co/1sPG7sX/imageedit-58-3688987062.png",page:"Accueil            ",wallet:"https://pic.onlinewebfonts.com/svg/img_568502.png"}
 
-
+  export const Styles = { carteproduit:["carteproduit","carteproduit2","carteproduit3"], rectangle:["rectangle","rectangle2","rectangle3"],background:["green","blue","yellow","red"]} 
 
 
 function App() {
@@ -43,15 +44,17 @@ function App() {
     <div className="App">
       
       <Navigation/>
-      
-      
        <SectionAccueil/>
-       <Entete/>
+       <Entete titre={'En vedette'}/>
+       <Carteproduit src={images.at(-1).src} auteur={images[12].auteur} montant={images[12].montant} profil={images[12].profil}  />
+       <Carteproduit src={images[11].src} auteur={images[11].auteur} montant={images[11].montant} profil={images[11].profil}  />
 
-      <Listeproduits />
-      <Listeproduits />
-
+       <Entete titre={'Speciales'}/>
       <Featuredlistings/>
+       <Entete titre={'liste de produits'} />
+      <Listeproduits />
+      <Listeproduits />
+    
       
 
 

@@ -2,14 +2,14 @@ import React from "react";
 import {Carteproduit2,Carteproduit,Carteproduit3} from './Carteproduit'
 import {images} from '../App'
 
-
-class Featuredlistings extends React.Component {
+ 
+export  class Featuredlistings extends React.Component {
     render() {
   
       return (<div>
           
 
-        <div><h1>FeaturedListings</h1></div> 
+        
         <div className="rowl" id="icaj">
            
     <div className="cell  " id="isok">
@@ -32,7 +32,7 @@ class Featuredlistings extends React.Component {
 
         </div>
         <div className="cell">
-        <Carteproduit2 src={images[8].src} auteur={images[7].auteur} montant={images[8].montant} profil={images[3].profil}/>
+        <Carteproduit2  src={images[8].src} auteur={images[7].auteur} montant={images[8].montant} profil={images[3].profil}/>
 
         </div>
       </div>
@@ -48,4 +48,3 @@ class Featuredlistings extends React.Component {
     }
   }
   
- export {Featuredlistings}

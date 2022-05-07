@@ -26,7 +26,7 @@
   width: 100%;
   max-width: 450px;
   max-height: 450px;
-
+   display: inline-block;
   border-radius: 20px;
   margin: 10px;
   box-shadow: 2px 3px #88888877;
@@ -99,7 +99,7 @@
   background-size: 100% 100%;
   width: 90%;
   min-width: 170px;
-  max-height: 250px;
+  max-height: 300px;
   margin: 2px auto;
 
 
@@ -215,3 +215,8 @@
 
 
 /*third ELEMENTS FIN*/
+
+
+.entete{
+  padding: 20px;
+}
