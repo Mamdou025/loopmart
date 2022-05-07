@@ -35,16 +35,17 @@
   }
   
   .rectangle-66 {
-    background-color: 
-  #000000;
+    background:white;
     border-radius: 20px;
     height: 50px;
     width: 50px;
+    border: 0px ;
+    box-shadow: 3px 3px 3px #666364b2;;
+
   }
 
   .rectangle-66:hover {
-    background-color: 
-  #2daa07;
+    background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(20, 206, 14, 0.562));
     border-radius: 20px;
     height: 50px;
     width: 50px;

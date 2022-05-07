@@ -7,7 +7,7 @@ export class SectionAccueil extends React.Component{
             <div className="sectionaccueil">
                    <div className="overlap-group">
                        <input className="inputtext"></input>
-                      <button className="rectangle-66"><i className="bi bi-search coloricon"></i></button>
+                      <button className="rectangle-66"><i className="bi bi-search "></i></button>
                    </div>
             </div>
 
