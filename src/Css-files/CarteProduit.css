@@ -1,9 +1,36 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500");
 
 
-.listeproduits{
-  position: relative;
-  
+
+/*SELLER */
+
+.seller{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+
+}
+.plus{
+  padding: 2px;
+  margin: 2px;
+  font-size: small;
+  background-color: transparent;
+  border-color: transparent;
+
+}
+.auteur{
+  text-align: start;
+  font-size: small;
+}
+.profil {
+  height: 32px;
+  object-fit: cover;
+  width: 32px;
+  border-radius: 100%;
+  margin: 1px;
+  padding: 2px;
+  box-shadow: 1px 1px #888888de;
 
 }
 .font-weight-normal{
@@ -11,11 +38,18 @@
   font-size: small;
 }
 
-.plus{
-  padding: 2px;
-  margin: 5px;
-  font-size: small;
 
+/*SELLER FIN */
+
+
+
+
+
+
+   
+/*CARTE PRODUIT */
+.cell .carteproduit{
+  width:99%
 }
 
 .carteproduit {
@@ -30,26 +64,13 @@
   border-radius: 20px;
   margin: 10px;
   box-shadow: 2px 3px #88888877;
-  margin-top: 80px;
-  
-
 }
-@media only screen and (max-width: 575px) {
-  .row {
-    width: 98%;
-  }
-}
-
-
 
 .carteproduit:hover {
     background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(20, 206, 14, 0.562));
     box-shadow: 4px 4px #888888b7;
     transition: 0.3s;
   }
-
-
-
 
 .rectangle {
   max-height: 316px;
@@ -62,166 +83,70 @@
 
 
 
-.viva {
-  height: 20px;
-  letter-spacing: 0;
-  margin-left: 135px;
-  margin-top: 0.17px;
-  width: 44px;
+/*ELEMENTS INCLUS DANS FEATURED  */
+@media only screen and (max-width: 575px) {
+  #isok .rectangle {
+    max-height: 500px;
+    height: 400px;
+    
+    object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
+  }
 }
 
-.profil {
-  height: 32px;
+
+#isok .rectangle {
+  max-height: 720px;
+  height: 680px;
+  
   object-fit: cover;
-  width: 32px;
-  border-radius: 100%;
-  margin: 1px;
-  padding: 2px;
-  box-shadow: 1px 1px #888888de;
-
+  width: 100%;
+  border-radius: 20px;
 }
 
-.seller{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
-
-}
-.auteur{
-    text-align: start;
-    font-size: small;
-}
-
-
-
-
-
-/*SECONDS ELEMENTS */
-.carteproduit2 {
+#isok .carteproduit {
   align-items: center;
-  background:linear-gradient(rgb(118,149,147,100%),rgb(236,178,17,100%));
+  background:linear-gradient(rgb(15, 201, 188),rgba(18, 146, 231, 0.514));
+  width: 100%;
   background-size: 100% 100%;
-  width: 90%;
-  min-width: 170px;
-  max-height: 300px;
-  margin: 2px auto;
-
-
-  border-radius: 20px;
-  box-shadow: 2px 3px #88888877;
-  
-
-}
-.bigbloc .carteproduit2 {
-  align-items: center;
-  background:linear-gradient(rgb(118,149,147,100%),rgba(223, 178, 53, 0.753));
-  width: 100%;
-  max-width: 600px;
-  max-height: 600px;
   margin: 0 auto;
+  max-height: 750px;
+  max-width:100%;
   border-radius: 20px;
   box-shadow: 2px 3px #88888877;
-  
-
-}
-.bigbloc .rectangle2 {
-  height: 500px;
-  padding: 5px;
-  
-  
-  object-fit: cover;
-  width: 100%;
-  border-radius: 20px;
-  
-
 }
 
 
-
-
-
-.carteproduit2:hover {
-  background:linear-gradient(rgb(118,149,147,100%),rgb(206, 155, 14));
+#isok .carteproduit:hover {
+  background:linear-gradient(45deg,rgba(10, 159, 228, 0.952),rgb(9, 204, 230));
   box-shadow: 4px 4px #888888b7;
   transition: 0.3s;
 }
 
-.rectangle2 {
-  height: 200px;
-  
-  
-  object-fit: cover;
-  width: 100%;
-  border-radius: 20px;
-}
-
-
-/*SECONDS ELEMENTS FIN*/
 
 
 
 
 
 
-/*third ELEMENTS */
-.carteproduit3 {
-  align-items: center;
-  background:linear-gradient(rgb(118,149,147,100%),rgb(236,178,17,100%));
-  background-size: 100% 100%;
-  width: 100%;
-  
-
-  border-radius: 20px;
-  box-shadow: 2px 3px #88888877;
-  
-
-}
-.rowl .carteproduit3 {
-  align-items: center;
-  background:linear-gradient(rgb(118,149,147,100%),rgba(223, 178, 53, 0.753));
-  width: 100%;
-  margin: 0 auto;
-
-  border-radius: 20px;
-  box-shadow: 2px 3px #88888877;
-  
-
-}
-.rowl .rectangle3 {
-  height: 480px;
-  
-  
-  object-fit: cover;
-  width: 100%;
-  border-radius: 20px;
-  
-
-}
-
-
-
-
-
-.carteproduit3:hover {
-  background:linear-gradient(rgb(118,149,147,100%),rgb(206, 155, 14));
-  box-shadow: 4px 4px #888888b7;
-  transition: 0.3s;
-}
-
-.rectangle2 {
-  height: 200px;
-  
-  
-  object-fit: cover;
-  width: 100%;
-  border-radius: 20px;
-}
 
 
 /*third ELEMENTS FIN*/
 
 
-.entete{
-  padding: 20px;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

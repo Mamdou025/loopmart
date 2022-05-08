@@ -8,6 +8,7 @@ import './Css-files/SectionAccueil.css';
 import './Css-files/Navbar.css';
 import { Navbar3 } from './Components/Navbar';
 import { Navigation } from './Components/Navigation';
+import Modal from './Components/Modal';
 
 import { Carteproduit, Listeproduits,Carteproduit2} from './Components/Carteproduit'
 import { Entete } from './Components/Entetes';
@@ -36,7 +37,7 @@ export const images =[
 
   export const Navbarl={links:["Panier        ","Collections           ","Nouveautés    "],logo:"https://i.ibb.co/1sPG7sX/imageedit-58-3688987062.png",page:"Accueil            ",wallet:"https://pic.onlinewebfonts.com/svg/img_568502.png"}
 
-  export const Styles = { carteproduit:["carteproduit","carteproduit2","carteproduit3"], rectangle:["rectangle","rectangle2","rectangle3"],background:["green","blue","yellow","red"]} 
+  export const Styles = { carteproduit:["carteproduit","carteproduit2","carteproduit3","carteproduit4"], rectangle:["rectangle","rectangle2","rectangle3","rectangle4"],background:["green","blue","yellow","red"]} 
 
 
 function App() {
@@ -46,16 +47,21 @@ function App() {
       <Navigation/>
        <SectionAccueil/>
        <Entete titre={'En vedette'}/>
-       <Carteproduit src={images.at(-1).src} auteur={images[12].auteur} montant={images[12].montant} profil={images[12].profil}  />
-       <Carteproduit src={images[11].src} auteur={images[11].auteur} montant={images[11].montant} profil={images[11].profil}  />
+       <Carteproduit src={images.at(-1).src} auteur={images[12].auteur} montant={images[12].montant} profil={images[12].profil} description={images[12].description} />
+       <Carteproduit src={images[11].src} auteur={images[11].auteur} montant={images[11].montant} profil={images[11].profil} description={images[11].description} />
 
        <Entete titre={'Speciales'}/>
       <Featuredlistings/>
        <Entete titre={'liste de produits'} />
       <Listeproduits />
-      <Listeproduits />
+      <Entete titre={'MODAL'} />
+      <Modal/>
+  
     
       
+
+
+
 
 
       </div>
