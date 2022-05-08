@@ -1,14 +1,14 @@
 import React from "react";
 import {images} from "../App"
-import { Styles } from "../App";
 
 
 
 
-export class Seller extends React.Component{
+export class Carteproduit extends React.Component{
   render(){
-    return (<div>
-      <a href={this.props.src}><img className={Styles.rectangle[0]} src={this.props.src} /></a>
+    return (
+    <div className="carteproduit">
+      <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
 
       <div>
     <div className="seller">
@@ -30,25 +30,6 @@ export class Seller extends React.Component{
   }
 }
 
-
-
-
- export class Carteproduit extends React.Component {
-
-
-
-  render() {
-    
-    return (
-      
-         <div className={Styles.carteproduit[0]}>
-    <Seller src={this.props.src}  auteur={this.props.auteur} montant={this.props.montant} profil={this.props.profil} description={this.props.description}/>
-  </div>
-    
-      
-    );
-  }
-}
 
 
   export  class Listeproduits extends React.Component {
