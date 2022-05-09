@@ -40,11 +40,11 @@
     display: block;
    align-items: center;
    width: 70%;
-   height:fit-content;
+   height:400px;
    margin:  auto;
-   overflow: auto;
    border-radius: 20px;
    box-shadow: 2px 2px 2px #aaaaaae1;
+   overflow: auto;
 
  }
 
