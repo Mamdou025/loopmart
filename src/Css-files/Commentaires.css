@@ -2,15 +2,15 @@ body{
 	background-color: #fff;
 }
 .container{
-	background-color: #eef2f5;
-	width: 400px;
+	background-color: #ffffff;
+	width: 90%;
 }
 .addtxt{
 	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
 	font-size: 13px;
-	width: 350px;
+	width: 250px;
 	background-color: #e5e8ed;
 	font-weight: 500;
 }
@@ -18,7 +18,7 @@ body{
 	color: #000;
 }
 .second{
-	width:  350px;
+	width:  250px;
 	background-color: white;
 	border-radius: 4px;
 	box-shadow: 2px 3px 2px #aaaaaa;

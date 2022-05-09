@@ -34,6 +34,7 @@ export class Modal2   extends React.Component{
     <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
     </div>
     <div class="modalcell">
+      <Commentaires/>
 
     </div>
   </div>
