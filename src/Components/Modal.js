@@ -1,32 +1,45 @@
 import { render } from "@testing-library/react";
 import React from "react";  
 import { images } from "../App";
-import { Styles } from "../App";
 import { Carteproduit } from "./Carteproduit";
+import { Seller } from "./Carteproduit";
+import { Commentaires } from "./Commentaires";
 
 
-class Modal   extends React.Component{
+export class Modal   extends React.Component{
     render(){
     return (
-        <div className={Styles.carteproduit[0]}>
-        <a href={images[2].src}><img className={Styles.rectangle[0]} src={images[9].src} /></a>
-          <div>
-    <div className="seller">
-      <div className="options">
-     <button type="button" className="btn btn-outline-dark plus"><i className="bi bi-bookmark"></i></button>
-    <button type="button" className="btn btn-outline-dark plus"><i className="bi bi-cart-plus"></i></button>
-    </div>
-         <span className="align-middle font-weight-bold ">{images[11].montant}$</span>
-      <div className="sellerinfo">
-          <span  className="auteur">{images[10].auteur}</span>
-        <img className="profil" src={images[8].profil} />
-      </div>
-    </div>
-    <div><p className="font-weight-normal">{this.props.description}  </p></div>
-    
-        </div> 
-        </div>     
+    <div className="bigcell ">
+        <Carteproduit src={images.at(-7).src} auteur={images.at(-7).auteur} montant={images.at(-7).montant} profil={images.at(-7).profil} description={images.at(-7).description}/>
+        </div>  
     )
     }
 }
-export default Modal
+
+
+export class Modal2   extends React.Component{
+  render(){
+  return (
+    <div className="bigmodalcell modal" >
+    <div class="modalrow">
+    <div class="modalcell">
+      <Seller montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+
+    </div>
+  </div>
+  <div class="modalrow">
+ 
+    <div class="modalcell" id="i7ai">
+  
+    <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
+    </div>
+    <div class="modalcell">
+
+    </div>
+  </div>
+  </div>
+ 
+   
+  )
+  }
+}

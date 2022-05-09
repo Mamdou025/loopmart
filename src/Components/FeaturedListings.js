@@ -10,9 +10,9 @@ export  class Featuredlistings extends React.Component {
           
 
         
-        <div className="rowl " id="icaj">
+        <div className="rowl  featured" >
            
-    <div className="cell  " id="isok">
+    <div className="cell bigcell ">
         <Carteproduit src={images[0].src} auteur={images[1].auteur} montant={images[2].montant} profil={images[3].profil}  description={images[5].description}/>
     </div>
     <div className="cell minicell  " id="ibhs">

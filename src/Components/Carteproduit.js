@@ -1,5 +1,32 @@
+import { render } from "@testing-library/react";
 import React from "react";
 import {images} from "../App"
+
+
+
+export class Seller extends React.Component{
+  render(){
+    return(
+      <div>
+      <div className="seller">
+      <div className="options">
+     <button type="button" className="btn btn-light plus"><i className="bi bi-arrows-angle-expand"></i></button>
+     <button type="button" className="btn btn-light plus"><i className="bi bi-bookmark"></i></button>
+    <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus"></i></button>
+    </div>
+         <span className="align-middle font-weight-bold ">{this.props.montant + "$"}</span>
+      <div className="sellerinfo">
+          <span  className="auteur">{this.props.auteur}</span>
+        <img className="profil" src={this.props.profil} />
+      </div>
+    </div>
+    <div><p className="font-weight-normal">{this.props.description}  </p></div>
+    </div>
+    )
+  }
+
+}
+
 
 
 
@@ -10,21 +37,9 @@ export class Carteproduit extends React.Component{
     <div className="carteproduit">
       <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
 
-      <div>
-    <div className="seller">
-      <div className="options">
-     <button type="button" className="btn btn-light plus"><i className="bi bi-arrows-angle-expand"></i></button>
-     <button type="button" className="btn btn-light plus"><i className="bi bi-bookmark"></i></button>
-    <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus"></i></button>
-    </div>
-         <span className="align-middle font-weight-bold ">{this.props.montant}$</span>
-      <div className="sellerinfo">
-          <span  className="auteur">{this.props.auteur}</span>
-        <img className="profil" src={this.props.profil} />
-      </div>
-    </div>
-    <div><p className="font-weight-normal">{this.props.description}  </p></div>
-    </div>
+     
+    <Seller montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+    
     </div>
     )
   }

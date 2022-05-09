@@ -1,20 +1,46 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,500");
 
 
-#icaj{
-  width: 95%;
-  margin: 0 auto;
+/*ELEMENTS INCLUS DANS FEATURED  */
+
+@media only screen and (max-width: 575px) {
+  .bigcell .rectangle {
+    max-height: 450px  !important ; 
+   
+  }
+  .bigcell .carteproduit {
+    max-height: 550px !important  ;
+  }
 }
 
-
-#isok{
-  display: flex;
+ .bigcell{
+   display: flex;
   align-items: center;
 }
 
+.bigcell .rectangle {
+  max-height: 720px;
+  height: 680px;
+  
+}
+
+.bigcell .carteproduit {
+  background:linear-gradient(45deg,rgb(229, 233, 17),rgba(18, 224, 231, 0.788));
+  margin: 0 auto;
+  max-height: 750px;
+  max-width:100%;
+}
 
 
+.bigcell .carteproduit:hover {
+  background:linear-gradient(45deg,rgba(18, 224, 228, 0.752),rgb(230, 225, 12));
+  
+}
 
+
+  /*WRAPPER ELEMENT ROW */
+
+   
 .rowl{
   display:flex;
   justify-content:flex-start;
@@ -23,19 +49,28 @@
   padding:10px;
 }
 
-.cell{
-  min-height:75px;
-  flex-grow:1;
-  flex-basis:100%;
-}
-#ibhs{
-  flex-basis:100%;
-}
 
-#i9ik,#i9il{
-  display: flex;
 
-}
+  /*BIG CELL  BIG ELEMENT  */
+  .cell{
+    min-height:75px;
+    flex-grow:1;
+    flex-basis:100%;
+  }
+    .featured{
+      width: 95%;
+  margin: 0 auto;
+    }
+
+
+
+
+
+
+
+
+/*BIG CELL small elements*/
+
 @media (max-width: 1185px){
   .minicell .rectangle{
     max-height: 200px;
@@ -45,14 +80,7 @@
   }
 }
 
-@media (max-width: 1185px){
-  .minicell .rectangle{
-    max-height: 200px;
-  }
- .minicell .carteproduit{
-    max-height: 400px;
-  }
-}
+
 
 @media (max-width: 768px){
   .rowl{

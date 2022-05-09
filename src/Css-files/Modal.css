@@ -1,0 +1,58 @@
+.modal{
+    background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .modalrow{
+    display:flex;
+    justify-content:flex-start;
+    align-items:stretch;
+    flex-wrap:nowrap;
+    padding:2px;
+    height: fit-content;
+  }
+  .modalcell{
+    min-height:45px;
+    flex-grow:1;
+    flex-basis:100%;
+	box-shadow: 2px 2px 2px #aaaaaae1;
+  }
+  @media (max-width: 768px){
+    .modalrow{
+      flex-wrap:wrap;
+    }
+  }
+
+
+
+
+
+
+
+.bigmodalcell{
+      background-color: rgb(255, 255, 255);
+    display: block;
+   align-items: center;
+   width: 70%;
+   height:fit-content;
+   margin:  auto;
+   overflow: auto;
+   border-radius: 20px;
+   box-shadow: 2px 2px 2px #aaaaaae1;
+
+ }
+
+.bigmodalcell .rectangle {
+  
+   height: auto;
+    object-fit: cover;
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+  }

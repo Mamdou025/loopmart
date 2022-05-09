@@ -42,6 +42,10 @@
 /*SELLER FIN */
 
 
+
+
+
+
    
 /*CARTE PRODUIT */
 
@@ -64,7 +68,7 @@
 }
 
 .carteproduit:hover {
-    background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(20, 206, 14, 0.562));
+    background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(27, 221, 20, 0.479));
     box-shadow: 4px 4px #888888b7;
     transition: 0.3s;
   }
@@ -79,45 +83,4 @@
 }
 
 
-
-/*ELEMENTS INCLUS DANS FEATURED  */
-@media only screen and (max-width: 575px) {
-  #isok .rectangle {
-    max-height: 500px;
-    height: 400px;
-    
-    object-fit: cover;
-    width: 100%;
-    border-radius: 20px;
-  }
-}
-
-
-#isok .rectangle {
-  max-height: 720px;
-  height: 680px;
-  
-  object-fit: cover;
-  width: 100%;
-  border-radius: 20px;
-}
-
-#isok .carteproduit {
-  align-items: center;
-  background:linear-gradient(rgb(15, 201, 188),rgba(18, 146, 231, 0.514));
-  width: 100%;
-  background-size: 100% 100%;
-  margin: 0 auto;
-  max-height: 750px;
-  max-width:100%;
-  border-radius: 20px;
-  box-shadow: 2px 3px #88888877;
-}
-
-
-#isok .carteproduit:hover {
-  background:linear-gradient(45deg,rgba(10, 159, 228, 0.952),rgb(9, 204, 230));
-  box-shadow: 4px 4px #888888b7;
-  transition: 0.3s;
-}
 
