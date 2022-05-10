@@ -6,6 +6,13 @@ body{
 	width: 90%;
 
 }
+
+
+#coms{
+	display: none;
+}
+
+
 .addtxt{
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -19,7 +26,8 @@ body{
 	color: #000;
 }
 .second{
-	width:  250px;
+	min-width:  250px;
+	width: 350px;
 	background-color: white;
 	border-radius: 4px;
 	box-shadow: 2px 3px 2px #aaaaaa;
@@ -65,3 +73,5 @@ body{
 .thumbupo{
 	color: #17a2b8;
 }
+
+

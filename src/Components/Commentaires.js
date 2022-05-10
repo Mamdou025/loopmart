@@ -2,21 +2,38 @@ import React from "react";
 import { images } from "../App";
 
 
+
+
+
+function Comment(){
+   const descrip = document.getElementById("descid")
+   if(document.getElementById("coms").style.display ==="none"){
+    document.getElementById("coms").style.display = "block"
+   }
+   descrip.style.display="none"
+   document.getElementById("coms").style.display = "block"
+}
+function Desc(){
+    const comms = document.getElementById("coms")
+    if(document.getElementById("descid").style.display ==="none"){
+        document.getElementById("descid").style.display = "block"
+       }
+    comms.style.display="none"
+ }
+
+
+
 export class Options extends React.Component{
     render(){
         return(
             <div className="options">
-              <div class="row" id="i1wj">
-                 <div class="details ">
-                     <p>Commentaires</p>
-                 </div>
-                  <div class="details ">
-                  <p>Details</p>
-
-                 </div>
-                 <div class="details ">
-                 <p>Produits similaires</p>
-                 </div>
+              <div className="row" id="i1wj">
+                 
+                     <button className="details" onClick={Comment}><p>Commentaires <i className="bi bi-filter-left"></i></p></button>
+                     <button className="details" onClick={Desc}><p>Details <i className="bi bi-blockquote-left"></i></p></button>
+                 
+                 
+                
               </div>
            </div>
 
@@ -27,7 +44,7 @@ export class Options extends React.Component{
 export class Commentaires extends React.Component{
     render(){
         return(
-            <div className="row">
+            <div className="row" id="coms">
     <div className="d-flex justify-content-center pt-3 pb-2"> <input type="text" name="text" placeholder="+ Ajouter un commentaire" className="form-control addtxt"/> </div>
     <div className="d-flex justify-content-center py-2">
         <div className="second py-2 px-2"> 
@@ -96,6 +113,38 @@ export class Commentaires extends React.Component{
     </div>
     
     
+        )
+    }
+}
+
+
+
+export class Description extends React.Component{
+    render(){
+        return(
+            <div className="row" id="descid">
+                <h4 className="opt1">240 $</h4>
+                <h5>Description</h5>
+                <p className="opt1">  Lorem ipsum lorem ipsum Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit a </p>
+                <div className="optionscontact">
+                    <div className="opt1">
+                    <h6>Contacter</h6>
+                    <button type="button" className="btn btn-light plus"><i className="bi bi-whatsapp bigger"></i></button>
+                    </div>
+                    <div className="opt1">
+                    <h6>Ajouter au panier</h6>
+                    <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus bigger"></i></button>
+                    </div>
+                    <div className="opt1">
+                    <h6>Enregistrer</h6>
+                    <button type="button" className="btn btn-light plus"><i className="bi bi-bookmark bigger"></i></button>
+                    </div>
+                   
+                    
+                   
+
+                </div>
+            </div>
         )
     }
 }

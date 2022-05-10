@@ -2,7 +2,17 @@ import { render } from "@testing-library/react";
 import React from "react";
 import {images} from "../App"
 
+function Showmodal(){
+const themodal = document.getElementById("themodal")
+if(themodal.style.display=="none"){
+  themodal.style.display="block"
+}else{
+  console.log("found")
+  themodal.style.display="none"
+}
 
+
+}
 
 export class Seller extends React.Component{
   render(){
@@ -10,7 +20,7 @@ export class Seller extends React.Component{
       <div>
       <div className="seller">
       <div className="options">
-     <button type="button" className="btn btn-light plus"><i className="bi bi-arrows-angle-expand"></i></button>
+     <button type="button" className="btn btn-light plus" onClick={Showmodal}><i className="bi bi-arrows-angle-expand"></i></button>
      <button type="button" className="btn btn-light plus"><i className="bi bi-bookmark"></i></button>
     <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus"></i></button>
 
