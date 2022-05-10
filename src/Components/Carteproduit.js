@@ -13,6 +13,7 @@ export class Seller extends React.Component{
      <button type="button" className="btn btn-light plus"><i className="bi bi-arrows-angle-expand"></i></button>
      <button type="button" className="btn btn-light plus"><i className="bi bi-bookmark"></i></button>
     <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus"></i></button>
+
     </div>
          <span className="align-middle font-weight-bold ">{this.props.montant + "$"}</span>
       <div className="sellerinfo">
