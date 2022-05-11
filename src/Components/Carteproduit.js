@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import React from "react";
 import {images} from "../App"
 import { Panier } from "../App";
-import { Modal2,Modal } from "./Modal";
+import { Modal } from "./Modal";
 
 
 
@@ -16,7 +16,7 @@ export class Seller extends React.Component{
       <div className="seller">
       <div className="options">
      <button type="button" className="btn btn-light plus" onClick={this.props.showModal}><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
-     <button type="button" className="btn btn-light plus" onClick={this.props.addtocart}><i className="bi bi-bookmark"></i></button>
+     <button type="button" className="btn btn-light plus" ><i className="bi bi-bookmark"></i></button>
     <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus"></i></button>
 
     </div>
@@ -42,7 +42,7 @@ export class Carteproduit extends React.Component{
 
   constructor(){
     super();
-    this.state={show:false};
+    this.state={show:false ,list:Panier,value:[ { src:"https://images.unsplash.com/photo-1561641377-f7456d23aa9b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=726&q=80" , auteur:'Verre', montant:25, profil:"https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" ,description:"eiciendis alias consequatur"}]};
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
   }
@@ -56,13 +56,6 @@ export class Carteproduit extends React.Component{
     this.setState({ show: false });
   };
 
-  addtocart =()=>{
-    console.log('woops')
-    Panier.push({src:`${this.props.src}`,auteur:`${this.props.auteur}`, montant:`${this.props.montant}`,profil:`${this.props.profil}`})
-    console.log(Panier)
-    console.log(images)
-  }
-
 
 
   render(){
@@ -73,7 +66,7 @@ export class Carteproduit extends React.Component{
      
     <Seller addtocart={this.addtocart} showModal={this.showModal} show={this.state.show} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
     
-    <Modal2 hideModal={this.hideModal} show={this.state.show}  src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+    <Modal hideModal={this.hideModal} show={this.state.show}  src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
 
     
     </div>
@@ -103,7 +96,8 @@ export class Carteproduit extends React.Component{
   export  class Listepanier extends React.Component {
     constructor(props){
       super(props);
-      this.state={liste:[]}
+      this.state={show:false ,list:Panier};
+
     }
 
     render() {
@@ -112,7 +106,7 @@ export class Carteproduit extends React.Component{
       
        
           <div className="row listeproduits">
-                        {this.state.liste.map(img=>{return(<div className='col-xl-3  col-md-4  col-sm-6'><Carteproduit  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} /></div>)})}
+                        {this.state.list.map(img=>{return(<div className='col-xl-3  col-md-4  col-sm-6'><Carteproduit  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} /></div>)})}
 
           </div>
        

@@ -10,7 +10,7 @@ import './Css-files/Commentaires.css'
 import './Css-files/Navbar.css';
 import { Navbar3 } from './Components/Navbar';
 import { Navigation } from './Components/Navigation';
-import {Modal,Modal2} from './Components/Modal';
+import {Modal} from './Components/Modal';
 import { Commentaires } from './Components/Commentaires';
 
 import { Carteproduit, Listeproduits, Listepanier} from './Components/Carteproduit'
