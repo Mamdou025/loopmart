@@ -7,15 +7,20 @@ import { images } from "../App";
 
 function Comment(){
    const descrip = document.getElementById("descid")
-   if(document.getElementById("coms").style.display ==="none"){
+   if(document.getElementById("coms").style.display==="none"){
+       console.log('oui none ')
     document.getElementById("coms").style.display = "block"
    }
    descrip.style.display="none"
    document.getElementById("coms").style.display = "block"
 }
+
+
+
 function Desc(){
     const comms = document.getElementById("coms")
     if(document.getElementById("descid").style.display ==="none"){
+        console.log('oui none')
         document.getElementById("descid").style.display = "block"
        }
     comms.style.display="none"
@@ -123,9 +128,13 @@ export class Description extends React.Component{
     render(){
         return(
             <div className="row" id="descid">
-                <h4 className="opt1">240 $</h4>
+                <div className="descrip">
+                    <h4 className="opt1">{this.props.montant}</h4>
                 <h5>Description</h5>
-                <p className="opt1">  Lorem ipsum lorem ipsum Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit a </p>
+                <div className="row"> <p className="opt1">{this.props.description}</p></div>
+                </div>
+               
+               
                 <div className="optionscontact">
                     <div className="opt1">
                     <h6>Contacter</h6>

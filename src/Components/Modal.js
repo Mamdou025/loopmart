@@ -1,30 +1,95 @@
 import { render } from "@testing-library/react";
-import React from "react";  
+import React, { useState } from "react";  
 import { images } from "../App";
 import { Carteproduit } from "./Carteproduit";
 import { Seller } from "./Carteproduit";
 import { Commentaires, Description } from "./Commentaires";
 import { Options } from "./Commentaires";
 
-export class Modal   extends React.Component{
-    render(){
+export const Modal = ({handleClose,show})=>{
+  const showHideClassName = show ? "ouishowit" : "donotshowit";
+
+
+    
     return (
-    <div className="bigcell ">
-        <Carteproduit src={images.at(-7).src} auteur={images.at(-7).auteur} montant={images.at(-7).montant} profil={images.at(-7).profil} description={images.at(-7).description}/>
-        </div>  
+      <div className={showHideClassName}>
+      <div className="detailsproduit ">
+      <div className="bigmodalcell " >
+      <div className="modalrow1">
+      <div className="modalcell">
+      <div>
+        <div className="seller">
+        <div className="options">
+       <button type="button" className="btn btn-light plus"onClick={handleClose}><i className="bi bi-arrows-angle-contract"></i></button>
+  
+      </div>
+          
+        <div className="sellerinfo">
+            <span  className="auteur">{this.props.auteur}</span>
+          <img className="profil" src={this.props.profil} />
+        </div>
+      </div>
+    
+      </div>
+  
+      </div>
+    </div>
+    <div className="modalrow">
+   
+      <div className="modalcell" id="i7ai">
+    
+      <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
+      </div>
+      <div className="modalcell2">
+        <Options/>
+        <Description src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+        <Commentaires/>
+  
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+   
+    
     )
-    }
+    
 }
 
 
+
+
+
+
+
+
+
+
 export class Modal2   extends React.Component{
+
+//{(this.props.show)?"modal showit":"modal"}
+
   render(){
   return (
-    <div className="detailsproduit modal " id="themodal">
+    <div className={(this.props.show)?"modal showit":"modal"}  id="themodal">
+    <div className="detailsproduit ">
     <div className="bigmodalcell " >
     <div className="modalrow1">
     <div className="modalcell">
-      <Seller montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+    <div>
+      <div className="seller">
+      <div className="options">
+     <button type="button" className="btn btn-light plus" onClick={this.props.hideModal}><i className="bi bi-arrows-angle-contract"></i></button>
+
+    </div>
+        
+      <div className="sellerinfo">
+          <span  className="auteur">{this.props.auteur}</span> 
+        <img className="profil" src={this.props.profil} />
+      </div>
+    </div>
+  
+    </div>
 
     </div>
   </div>
@@ -36,10 +101,11 @@ export class Modal2   extends React.Component{
     </div>
     <div className="modalcell2">
       <Options/>
-      <Description/>
+      <Description src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       <Commentaires/>
 
     </div>
+  </div>
   </div>
   </div>
   </div>
