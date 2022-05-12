@@ -24,7 +24,7 @@ export class Seller extends React.Component{
         <div>
         <div className="seller">
         <div className="options">
-       <button type="button" className="btn btn-light plus" onClick={this.props.showModal}><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
+       <button type="button" className="btn btn-light plus"  data-toggle="modal" data-target="#exampleModalCenter"><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
        <button type="button" className="btn btn-light plus" ><i className="bi bi-bookmark"></i></button>
       <button type="button" className="btn btn-light plus" onClick={this.props.Addproduct}><i className="bi bi-cart-plus"></i></button>
   
@@ -77,9 +77,7 @@ export class Seller extends React.Component{
       <Modal hideModal={this.hideModal} show={this.state.show}  src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
   
       <div>
-<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
+
 
 <div className="modal fade" id="exampleModalCenter" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div className="modal-dialog modal-dialog-centered" role="document">
