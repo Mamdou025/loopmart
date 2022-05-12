@@ -52,7 +52,7 @@ export class Modal extends React.Component{
     </div>
     <div className="modalcell2">
       <Options/>
-      <Description src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Description src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       <Commentaires/>
 
     </div>
