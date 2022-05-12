@@ -83,14 +83,7 @@
     }
   }
 
-  .modalcell2{
-    min-height:45px;
-    flex-grow:1;
-    flex-basis:100%;
-	box-shadow: 2px 2px 2px #aaaaaae1;
-    overflow: auto;
-
-  }
+ 
 
 
   
