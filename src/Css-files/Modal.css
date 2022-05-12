@@ -24,6 +24,8 @@
 
 .modal{
     background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+    transition:all 600ms ease-in-out;
+
 
 }
  .bigger{
@@ -91,8 +93,6 @@
   }
 
 
-
-
   
 .bigmodalcell{
       background-color: rgb(255, 255, 255);
@@ -100,15 +100,17 @@
    align-items: center;
    width: 70%;
    height: fit-content;
-   margin: 10% auto;
+   margin: 20px auto;
    border-radius: 20px;
    border:1px solid black;
+   overflow: auto;
+
 
  }
 
   @media screen and (max-width: 900px) {
     .bigmodalcell{
-   overflow: scroll;
+   overflow: auto;
   
        width: 100%;
      
@@ -137,8 +139,59 @@
 
   .showit{
     display:block !important;
+
   }
+
+
 
   .descrip{
     margin: 0 auto;
   }
+
+
+
+
+
+
+  /* NEW MODAL */
+
+
+
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 0.5rem;
+    pointer-events: all;
+}
+
+.modal-dialog {
+  width: 70%;
+  margin: 1.75rem auto;
+  border-radius: 20px;
+  max-width: 1000px;
+  background-color: azure;
+}
+  @media screen and (min-width: 701px) {
+    .modal-dialog {
+      width: 70%;
+      margin: 1.75rem auto;
+      border-radius: 20px;
+      max-width: 1000px;
+      background-color: azure;
+      overflow: auto;
+  }
+ }
+
+
+ @media screen and (max-width: 700px) {
+  .modal-dialog {
+    width: 99%;
+    margin: 1.75rem auto;
+    border-radius: 20px;
+    max-width: 680px;
+    background-color: azure;
+    overflow: auto;
+
+  }
+}
+

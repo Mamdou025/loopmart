@@ -11,6 +11,16 @@
 
 }
 
+.badge-warning{
+  font-size: small;
+      color: #212529;
+    background-color: #ffc107;
+    position: absolute;
+    padding: 1px;
+    margin: 1px;
+}
+
+
 
 .nav-item{
   padding: 4px;

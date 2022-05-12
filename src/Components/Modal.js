@@ -1,11 +1,7 @@
-import { render } from "@testing-library/react";
-import React, { useState } from "react";  
-import { images } from "../App";
-import { Carteproduit } from "./Carteproduit";
-import { Seller } from "./Carteproduit";
 import { Commentaires, Description } from "./Commentaires";
+import React from "react";
 import { Options } from "./Commentaires";
-
+import { CSSTransition } from "react-transition-group";
 
 
 
@@ -22,9 +18,8 @@ export class Modal extends React.Component{
 
   render(){
   return (
-    <div className={(this.props.show)?"modal showit":"modal"}  id="themodal">
-    <div className="detailsproduit ">
-    <div className="bigmodalcell " >
+    <div className={(this.props.show)?"modal showit":"modal "}  id="themodal">
+    <div className={(this.props.show)?"bigmodalcell":"nothing"}  >
     <div className="modalrow1">
     <div className="modalcell">
     <div>
@@ -52,13 +47,16 @@ export class Modal extends React.Component{
     </div>
     <div className="modalcell2">
       <Options/>
+      
       <Description src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+
+     
       <Commentaires/>
 
     </div>
   </div>
   </div>
-  </div>
+  
   </div>
  
    

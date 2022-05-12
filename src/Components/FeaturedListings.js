@@ -1,9 +1,15 @@
 import React from "react";
-import {Carteproduit,} from './Carteproduit'
+import {Carteproduit,} from './Carte'
 import {images} from '../App'
 
  
+
+
+
+
+
 export  class Featuredlistings extends React.Component {
+
     render() {
   
       return (<div>
@@ -13,12 +19,12 @@ export  class Featuredlistings extends React.Component {
         <div className="rowl  featured" >
            
     <div className="cell bigcell ">
-        <Carteproduit src={images[0].src} auteur={images[1].auteur} montant={images[2].montant} profil={images[3].profil}  description={images[5].description}/>
+        <Carteproduit  Addproduct={this.props.Addproduct} src={images[0].src} auteur={images[1].auteur} montant={images[2].montant} profil={images[3].profil}  description={images[5].description}/>
     </div>
     <div className="cell minicell  " id="ibhs">
-      <div className="rowl " id="i9ik">
+      <div className="rowl " >
         <div className="cell col-sm-6 " id="io6p">
-        <Carteproduit src={images[4].src} auteur={images[5].auteur} montant={images[6].montant} profil={images[3].profil} description={images[3].description}/>
+        <Carteproduit   Addproduct={this.props.Addproduct} src={images[4].src} auteur={images[5].auteur} montant={images[6].montant} profil={images[3].profil} description={images[3].description}/>
 
         </div>
         <div className="cell col-sm-6 " id="ifff">
@@ -26,7 +32,7 @@ export  class Featuredlistings extends React.Component {
 
         </div>
       </div>
-      <div className="rowl  " id="i9il">
+      <div className="rowl  " >
         <div className="cell col-sm-6" id="io9h ">
         <Carteproduit src={images[7].src} auteur={images[6].auteur} montant={images[5].montant} profil={images[3].profil} description={images[6].description}/>
 

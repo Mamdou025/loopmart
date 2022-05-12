@@ -1,4 +1,4 @@
-
+import { CSSTransition } from 'react-transition-group';
 import './Css-files/App.css';
 import './Css-files/CarteProduit.css';
 import './Css-files/FeaturedListings.css';
@@ -8,12 +8,11 @@ import './Css-files/Commentaires.css'
 
 
 import './Css-files/Navbar.css';
-import { Navbar3 } from './Components/Navbar';
 import { Navigation } from './Components/Navigation';
 import {Modal} from './Components/Modal';
 import { Commentaires } from './Components/Commentaires';
 
-import { Carteproduit, Listeproduits, Listepanier,Listepanier2, Mycart} from './Components/Carteproduit'
+import { Carteproduit, Listeproduits, Listepanier,Listepanier2, Mycart} from './Components/Accueil'
 import { Entete } from './Components/Entetes';
 import { Featuredlistings } from './Components/FeaturedListings';
 import { SectionAccueil } from './Components/SectionAccueil';
@@ -38,7 +37,10 @@ export const images =[
   { src:"https://images.unsplash.com/photo-1557800636-894a64c1696f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80" , auteur:'Orange', montant:67, profil:"https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" ,description:" accusantium minim veniam, quis nostrud exercitation ullamco voluptatem accusantium doloremque laudantium"},                      
        ]
 
-  export const Navbarl={links:["Panier        ","Collections           ","Nouveautés    "],logo:"https://i.ibb.co/1sPG7sX/imageedit-58-3688987062.png",page:"Accueil            ",wallet:"https://pic.onlinewebfonts.com/svg/img_568502.png"}
+
+
+  export const featuredlist=[images.at(-5),images.at(-4),images.at(-10),images.at(-12)]
+
 
   export const Styles = { carteproduit:["carteproduit","carteproduit2","carteproduit3","carteproduit4"], rectangle:["rectangle","rectangle2","rectangle3","rectangle4"],background:["green","blue","yellow","red"]} 
 
@@ -64,19 +66,7 @@ export const images =[
 function App() {
   return (
     <div className="App">
-      
-      <Navigation/>
-       <SectionAccueil/>
-       <Entete titre={'En vedette'}/>
-      
-       <Carteproduit src={images.at(-7).src} auteur={images.at(-1).auteur} montant={images.at(-1).montant} profil={images.at(-1).profil} description={images.at(-1).description} />
-       <Carteproduit src={images.at(-3).src} auteur={images.at(-2).auteur} montant={images.at(-2).montant} profil={images.at(-2).profil} description={images.at(-2).description} />
-       
-       <Entete titre={'Speciales'}/>
-      <Featuredlistings/>
-       <Entete titre={'liste de produits'} />
       <Mycart/>
-      <Entete titre={'Mon panier 2'} />
       </div>
      
 

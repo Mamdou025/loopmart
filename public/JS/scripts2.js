@@ -16,3 +16,6 @@ $(window).on('scroll load', function() {
         event.preventDefault();
     });
 });
+
+
+//   const featuredlist=[images.at(-5),images.at(-4),images.at(-10),images.at(-12)]

@@ -1,5 +1,5 @@
 import React from "react";
-import {images, Navbarl} from '../App'
+import {images} from '../App'
 
 export class Navigation extends React.Component{
 render(){
@@ -8,7 +8,7 @@ render(){
       
 
         <div className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top top-nav-collapse navigation">
-                    <a className="navbar-brand logo-image" href="index.html"><img className ="imagea"src={Navbarl.logo} alt="alternative"/></a>
+                    <a className="navbar-brand logo-image" href="index.html"><img className ="imagea"src="https://i.ibb.co/1sPG7sX/imageedit-58-3688987062.png" alt="alternative"/></a>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                              <span><i className="bi bi-list"></i></span>
                              <span ><i className="bi bi-x-lg"></i></span>
@@ -38,7 +38,7 @@ render(){
                 
 
                 <li className="nav-item">
-                    <a className="nav-link page-scroll" href="#contact">Panier <i className="bi bi-bag-fill"></i></a>
+                    <a className="nav-link page-scroll" href="#contact">Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.cartcount} </span></a>
                 </li>
             </ul>
             <span className="nav-item social-icons">

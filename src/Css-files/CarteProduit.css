@@ -69,8 +69,8 @@
 
 .carteproduit:hover {
     background:linear-gradient(45deg,rgba(228, 206, 10, 0.555),rgba(27, 221, 20, 0.479));
-    box-shadow: 4px 4px #888888b7;
-    transition: 0.3s;
+    box-shadow: 3px 3px #88888894;
+    transition: 0.4s ease-in;
   }
 
 .rectangle {
