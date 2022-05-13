@@ -171,7 +171,7 @@
   max-width: 1000px;
   background-color: azure;
 }
-  @media screen and (min-width: 701px) {
+  @media screen and (min-width: 950px) {
     .modal-dialog {
       width: 70%;
       margin: 1.75rem auto;
@@ -183,9 +183,9 @@
  }
 
 
- @media screen and (max-width: 700px) {
+ @media screen and (max-width: 949px) {
   .modal-dialog {
-    width: 99%;
+    width: 100%;
     margin: 1.75rem auto;
     border-radius: 20px;
     max-width: 680px;
@@ -195,3 +195,6 @@
   }
 }
 
+.modal.fade.show{
+  display: block !important;
+}
