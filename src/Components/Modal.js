@@ -77,7 +77,7 @@ export class ModalZ extends React.Component{
       <div className="modal fade" id={`${this.props.auteur+this.props.montant}`} tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered" role="document">
       
-          <div>
+          <div className="modalelements">
           <div className="modalrow1">
           <div className="modalcell">
           <div>
@@ -104,12 +104,12 @@ export class ModalZ extends React.Component{
           <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
           </div>
           <div className="modalcell2">
-            <Options/>
+            <Options  iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`}   idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} />
             
-            <Description src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+            <Description  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
            
-            <Commentaires/>
+            <Commentaires  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
           </div>
         </div>

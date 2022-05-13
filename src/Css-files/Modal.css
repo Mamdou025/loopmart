@@ -32,7 +32,7 @@
      font-size: x-large;
  }
  .optionscontact{
-   display: flex;
+   display: inline-flex;
      padding: 5px;
      margin: 0 auto;
      margin-bottom: 2rem;
@@ -197,4 +197,13 @@
 
 .modal.fade.show{
   display: block !important;
+}
+
+.modalelements{
+  width: 100%;
+}
+
+
+.row.hideit{
+  display: none;
 }

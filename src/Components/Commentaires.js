@@ -5,37 +5,49 @@ import { images } from "../App";
 
 
 
-function Comment(){
-   const descrip = document.getElementById("descid")
-   if(document.getElementById("coms").style.display==="none"){
-       console.log('oui none ')
-    document.getElementById("coms").style.display = "block"
-   }
-   descrip.style.display="none"
-   document.getElementById("coms").style.display = "block"
-}
-
-
-
-function Desc(){
-    const comms = document.getElementById("coms")
-    if(document.getElementById("descid").style.display ==="none"){
-        console.log('oui none')
-        document.getElementById("descid").style.display = "block"
-       }
-    comms.style.display="none"
- }
 
 
 
 export class Options extends React.Component{
+    constructor(){
+        super();
+    }
+
+
+    Comment=()=>{
+        const descrip = document.getElementById(`${this.props.iddesc}`)
+        console.log(this.props.iddesc)
+        console.log(descrip)
+   if(document.getElementById(`${this.props.idcom}`).style.display==="none"){
+       console.log('oui none ')
+    document.getElementById(`${this.props.idcom}`).style.display = "block"
+   }
+   descrip.style.display="none"
+   document.getElementById(`${this.props.idcom}`).style.display = "block"
+    }
+
+
+    Desc=()=>{
+        const comms = document.getElementById(`${this.props.idcom}`)
+        console.log(this.props.idcom)
+        console.log(comms)
+    if(document.getElementById(`${this.props.iddesc}`).style.display ==="none"){
+        console.log('oui none')
+        document.getElementById(`${this.props.iddesc}`).style.display = "block"
+       }
+    comms.style.display="none"
+    
+    }
+
+
+
     render(){
         return(
             <div className="options">
               <div className="row" id="i1wj">
                  
-                     <button className="details" onClick={Comment}><p>Commentaires <i className="bi bi-filter-left"></i></p></button>
-                     <button className="details" onClick={Desc}><p>Details <i className="bi bi-blockquote-left"></i></p></button>
+                     <button className="details" onClick={this.Comment}><p>Commentaires <i className="bi bi-filter-left"></i></p></button>
+                     <button className="details" onClick={this.Desc}><p>Details <i className="bi bi-blockquote-left"></i></p></button>
                  
                  
                 
@@ -49,7 +61,7 @@ export class Options extends React.Component{
 export class Commentaires extends React.Component{
     render(){
         return(
-            <div className="row" id="coms">
+            <div className="row hideit" id={this.props.idcom}>
     <div className="d-flex justify-content-center pt-3 pb-2"> <input type="text" name="text" placeholder="+ Ajouter un commentaire" className="form-control addtxt"/> </div>
     <div className="d-flex justify-content-center py-2">
         <div className="second py-2 px-2"> 
@@ -127,11 +139,11 @@ export class Commentaires extends React.Component{
 export class Description extends React.Component{
     render(){
         return(
-            <div className="row" id="descid">
+            <div className="row" id={this.props.iddesc}>
                 <div className="descrip">
-                    <h4 className="opt1">{this.props.montant}</h4>
+                    <h4 className="opt1 ">{this.props.montant}</h4>
                 <h5>Description</h5>
-                <div className="row"> <p className="opt1">{this.props.description}</p></div>
+                <div > <p className="opt1  ">{this.props.description}</p></div>
                 </div>
                
                
