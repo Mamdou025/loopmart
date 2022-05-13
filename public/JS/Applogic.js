@@ -38,13 +38,6 @@
 
 
 
-//button addproduct 
- onClick={this.props.Addproduct}
 
-
-
-
- //button show modal 
- onClick={this.props.showModal}
 
 */}
