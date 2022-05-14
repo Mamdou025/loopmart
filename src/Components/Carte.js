@@ -71,6 +71,13 @@ export class Seller extends React.Component{
 
     }
 
+    hideDetails =()=>{
+      const modetails = document.getElementById(`${this.props.auteur+this.props.montant+"info"}`)
+      modetails.classList.remove("Shown")
+      console.log(modetails)
+ 
+     }
+
   
   
     render(){

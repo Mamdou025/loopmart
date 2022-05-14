@@ -55,8 +55,9 @@
 
 .carteproduit {
   align-items: center;
-  background:linear-gradient(rgb(118,149,147,100%),rgb(255, 255, 255));
+ /* background:linear-gradient(rgb(118,149,147,100%),rgb(255, 255, 255));*/
   background-size: 100% 100%;
+  border: 1px solid rgba(128, 128, 128, 0.315);
   flex-direction: column;
   width: 90%;
   max-width: 450px;
@@ -83,8 +84,7 @@
 }
 
 .productinfo{
-  opacity: 0;
-
+display: none;
 }
 
 
