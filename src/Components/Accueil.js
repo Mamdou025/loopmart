@@ -41,10 +41,7 @@ constructor(){
  this.state={ produits:images,cart:[ { src:"https://images.unsplash.com/photo-1565622871630-8e453c4b6ed9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" , auteur:'Polaroid', montant:220, profil:"https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" ,description:"minim veniam, quis nostrud exercitation ullamco   "}]}
 }
 Addproduct(src,auteur,montant,profil,description){
-  console.log('Added')
   let kart = this.state.cart ;
-  console.log(kart)
-  console.log(this.state.cart)
   let product = {
     "src":src,
     "auteur":auteur,
@@ -54,7 +51,6 @@ Addproduct(src,auteur,montant,profil,description){
   }
   kart.push(product)
   this.setState({cart:kart})
-  console.log(this.state.cart)
 }
 
 
@@ -78,11 +74,11 @@ Addproduct(src,auteur,montant,profil,description){
         )
         })}
       </div>
-              {this.state.cart.map(cartItem=>{return(<div><h5>. {cartItem.auteur} .</h5></div>)})}
+              </div>
               </div>
 
 
-              </div>
+              
 
       
     )
