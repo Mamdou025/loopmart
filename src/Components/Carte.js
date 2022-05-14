@@ -21,7 +21,7 @@ export class Seller extends React.Component{
    
     render(){
       return(
-        <div>
+        <div className="productinfo" id={this.props.idproductInfo}>
         <div className="seller">
         <div className="options">
        <button type="button" className="btn btn-light plus" data-toggle="modal" data-target={"#"+`${this.props.auteur+this.props.montant}`}   onClick={this.props.showModal}><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
@@ -63,16 +63,23 @@ export class Seller extends React.Component{
     hideModal = () => {
       this.setState({ show: false });
     };
-  
+
+    showDetails =()=>{
+     const modetails = document.getElementById(`${this.props.auteur+this.props.montant+"info"}`)
+     modetails.classList.add("Shown")
+     console.log(modetails)
+
+    }
+
   
   
     render(){
       return (
       <div className="carteproduit">
-        <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
+        <img onClick={this.showDetails}  className="rectangle" src={this.props.src} />
   
   
-      <Seller hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Seller idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
       <ModalZ show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
   

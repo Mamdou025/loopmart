@@ -82,5 +82,14 @@
   border-radius: 20px;
 }
 
+.productinfo{
+  opacity: 0;
+
+}
 
 
+.Shown{
+  display: block !important;
+  transition: all 1s ease-out;
+  opacity: 1;
+}
