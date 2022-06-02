@@ -18,3 +18,19 @@ export class SectionAccueil extends React.Component{
     }
         
 }
+
+
+export class SectionAccueil2 extends React.Component{
+    render(){
+        return(
+            <div className="sectionaccueil2">
+                   
+            </div>
+
+        )
+        
+        
+    
+    }
+        
+}

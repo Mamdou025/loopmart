@@ -16,6 +16,24 @@
     position: relative;
     top: 0;
   }
+
+
+  .sectionaccueil2 {
+    align-items: flex-start;
+   background: linear-gradient(rgba(236, 232, 189, 0.616),rgba(131, 190, 21, 0.726));;
+   position: relative;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: flex;
+    height: 150px;
+    left: 0;
+    width: 100%;
+    padding: 20px 37px;
+    position: relative;
+    top: 0;
+  }
+
+
   .coloricon{
     color: white;
   }

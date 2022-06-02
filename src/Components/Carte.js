@@ -14,8 +14,9 @@ export class Seller extends React.Component{
 
     addToCart=()=>{
   
-      Panier.push({src:`${this.props.src}`, montant:`${this.props.montant}`, auteur:`${this.props.auteur}` ,profil:`${this.props.profil}` ,description:`${this.props.description}`})
+      Panier.push({src:`${this.props.src}`, montant:`${this.props.montant}`, auteur:`${this.props.auteur}` ,profil:`${this.props.profil}`,titre:`${this.props.titre}` ,description:`${this.props.description}`})
       console.log(Panier)
+      console.log(this.props.titre)
    }
   
    
@@ -29,13 +30,13 @@ export class Seller extends React.Component{
       <button type="button" className="btn btn-light plus" onClick={this.props.Addproduct}><i className="bi bi-cart-plus"></i></button>
   
       </div>
+      <p className="text-sm-center">{this.props.titre}</p>
+
            <span className="align-middle font-weight-bold ">{this.props.montant + "$"}</span>
         <div className="sellerinfo">
-            <span  className="auteur">{this.props.auteur}</span>
-          <img className="profil" src={this.props.profil} />
+          <img  className="profil" src={this.props.profil} />
         </div>
       </div>
-      <div><p className="font-weight-normal">{this.props.description}  </p></div>
       </div>
       )
     }
@@ -57,19 +58,13 @@ export class Seller extends React.Component{
   
     showModal = () => {
       this.setState({ show: true });
-      console.log(this.state.show)
     };
   
     hideModal = () => {
       this.setState({ show: false });
     };
 
-    showDetails =()=>{
-     const modetails = document.getElementById(`${this.props.auteur+this.props.montant+"info"}`)
-     modetails.classList.add("Shown")
-     console.log(modetails)
-
-    }
+    
 
     hideDetails =()=>{
       const modetails = document.getElementById(`${this.props.auteur+this.props.montant+"info"}`)
@@ -82,15 +77,17 @@ export class Seller extends React.Component{
   
     render(){
       return (
+        <div className='col-xl-3  col-md-4  col-sm-6'>
       <div className="carteproduit">
-        <img onClick={this.showDetails}  className="rectangle" src={this.props.src} />
+        <img   className="rectangle" src={this.props.src}    onClick={this.props.Ajouter2.bind(this,this.props)}/>
   
   
-      <Seller idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
       <ModalZ show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
   
       
+      </div>
       </div>
       )
     }

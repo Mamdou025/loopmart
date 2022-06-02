@@ -1,0 +1,20 @@
+
+.card{
+    width:500px;
+    background-color:rgb(180, 240, 145);
+    border:none;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px auto;
+}
+.form-check {
+    position: relative;
+    display: block;
+    padding-left: 0.25rem;
+}
+input{
+padding: 5px;
+}
+.form-control{
+    border-radius: 0.50rem !important;
+}
