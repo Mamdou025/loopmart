@@ -104,9 +104,13 @@ class App extends React.Component {
         <Navigation cartcount= {this.state.cart.length} />
         <Routes>
         <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits} Ajouter2={this.Ajouter2} Addproduct={this.Addproduct} />} />
-       <Route path="/panier" element={ <div><SectionAccueil2/> <div className="row listeproduits">
-        {this.state.cart.map(img=>{return(<Carteproduit  Addproduct={this.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} /> )})} </div></div> }/>
+       <Route path="/panier" element={ <div><SectionAccueil2/> <div className="row listeproduits"> {this.state.cart.map(img=>{return(<Carteproduit  Addproduct={this.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} /> )})} </div></div> }/>
        <Route  path="/Ajouter" element={<AjouterProduit/>}/>  
+       <Route  path="/Collection" element={<SectionAccueil2/>}/>  
+       <Route  path="/Messages" element={<SectionAccueil2/>}/>  
+
+
+
         </Routes>
         
         </div>
