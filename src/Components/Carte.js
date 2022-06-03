@@ -79,7 +79,7 @@ export class Seller extends React.Component{
       return (
         <div className='col-xl-3  col-md-4  col-sm-6'>
       <div className="carteproduit">
-        <img   className="rectangle" src={this.props.src}    onClick={this.props.Ajouter2.bind(this,this.props)}/>
+        <img   className="rectangle" src={this.props.src}   />
   
   
       <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>

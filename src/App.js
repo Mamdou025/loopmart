@@ -1,5 +1,6 @@
 import { CSSTransition } from 'react-transition-group';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import axios from 'axios';
 import './Css-files/App.css';
 import './Css-files/CarteProduit.css';
 import './Css-files/FeaturedListings.css';
@@ -7,20 +8,12 @@ import './Css-files/SectionAccueil.css';
 import './Css-files/Modal.css'
 import './Css-files/Commentaires.css'
 import './Css-files/AjouterProduit.css'
-
-
 import './Css-files/Navbar.css';
 import { Navigation } from './Components/Navigation';
-import {Modal} from './Components/Modal';
-import { Commentaires } from './Components/Commentaires';
-
 import { Carteproduit, Listepanier,Listepanier2} from './Components/Carte'
 import { Mycart } from './Components/Accueil';
-import { Entete } from './Components/Entetes';
-import { Featuredlistings } from './Components/FeaturedListings';
 import { SectionAccueil,SectionAccueil2 } from './Components/SectionAccueil';
 import React from 'react';
-import { Monpanier } from './Components/Monpanier';
 import { AjouterProduit } from './Components/Ajouterproduit';
 
 
@@ -72,8 +65,22 @@ export const images =[
 class App extends React.Component {
   constructor(){
     super();
-   this.state={ produits:images,cart:[]}
+   this.state={ produits:[],cart:[]}
   }
+
+
+  componentDidMount() {
+    axios.get('http://localhost:5000/Produits/')
+      .then(response => {
+        this.setState({ produits: response.data })
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
+
+
   Addproduct=(img)=>{
     let kart = this.state.cart ;
     console.log(img)
@@ -86,10 +93,7 @@ class App extends React.Component {
    
   
   }
-  Ajouter2=(elemnt1)=>{
-    console.log(elemnt1)
-  }
-
+ 
 
 
   render(){
@@ -102,7 +106,7 @@ class App extends React.Component {
         <Routes>
         <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits} Ajouter2={this.Ajouter2} Addproduct={this.Addproduct} />} />
        <Route path="/panier" element={ <div><SectionAccueil2/> <div className="row listeproduits">
-        {this.state.cart.map(img=>{return(<Carteproduit Ajouter2={this.Ajouter2} Addproduct={this.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} /> )})} </div></div> }/>
+        {this.state.cart.map(img=>{return(<Carteproduit  Addproduct={this.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} /> )})} </div></div> }/>
        <Route  path="/Ajouter" element={<AjouterProduit/>}/>  
         </Routes>
         
