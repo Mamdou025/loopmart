@@ -1,11 +1,11 @@
 
 .card{
     width:500px;
-    background-color:rgb(180, 240, 145);
-    border:none;
+    box-shadow: 2px 2px #88888877;
+    border: 1px solid rgba(128, 128, 128, 0.651);
     border-radius: 15px;
     padding: 40px;
-    margin: 40px auto;
+    margin: 10px auto;
 }
 @media screen and (max-width: 550px) {
     .card{
@@ -20,8 +20,86 @@
 }
 input{
 padding: 5px;
+width: 20%;
 }
 .form-control{
     border-radius: 0.50rem !important;
 }
 
+
+.ajouterproduit{
+    justify-content: center;
+}
+
+
+
+/*PANIER */
+
+
+
+
+.gradcolor{
+    background: rgba(128, 128, 128, 0.377);
+    border-radius: 0.65rem!important;
+    width:9rem;
+    margin: 0 auto;
+
+
+}
+.rounded {
+    border-radius: 0.75rem!important;
+}
+.btn-outline-primary{
+    border-radius: 0.65rem!important;
+    width: 9rem;
+    margin: 0 auto;
+
+}
+
+.bg-white{
+    box-shadow: 2px 2px #88888877;
+}
+.bg-white:hover{
+    box-shadow: 3px 3px #88888877;
+    background: linear-gradient(45deg,rgba(228, 206, 10, 0.178),rgba(27, 221, 20, 0.171));
+    transition: all 3000ms;
+}
+.mb-5, .my-5 {
+    margin-bottom: 1rem!important;
+}
+.mt-5, .my-5 {
+    margin-top: 1rem!important;
+}
+
+.btn-outline-primary {
+    color: #000000;
+    background-color: transparent;
+    background-image: none;
+    border-color: #000000;
+}
+.btn-primary {
+    color: rgb(0, 0, 0);
+    border-color: #00000000;
+}
+
+.prdct-qty-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.prdct-qty-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(128, 128, 128, 0.507);
+    color: #000000;
+    font-size: 11px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.prdct-qty-btn:hover {
+    background-color: #9de21e;
+
+}

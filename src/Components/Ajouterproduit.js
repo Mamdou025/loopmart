@@ -76,13 +76,12 @@ axios.post('http://localhost:5000/Produits/add', produit)
     render(){
         return( <div>
         
-        <SectionAccueil2/>
         <Entete titre={'Ajouter Un Produit'} />
-        <div className="row">   
-        <form className="card"    onSubmit={this.onSubmit}>
+        <div className="row ajouterproduit">   
+        <form className="card "    onSubmit={this.onSubmit}>
   <div className="form-group">
     <label for="exampleInputtitre1">Titre</label>
-    <input required type="text" maxLength="10" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer titre" value={this.state.titre} onChange={this.onChangeTitre}/>
+    <input required type="text" maxLength="18" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrer titre" value={this.state.titre} onChange={this.onChangeTitre}/>
   </div>
   <div className="form-group">
     <label for="exampleInputimg"> Lien Image</label>
@@ -105,9 +104,10 @@ axios.post('http://localhost:5000/Produits/add', produit)
   
  
  
-  <input type="submit" className="btn btn-primary" value="Creer un nouveau produit"/>
+  <input type="submit" className="btn btn-primary gradcolor" value="Creer un nouveau produit"/>
         </form>     
         <Carteproduit src={this.state.src} description={this.state.description} profil={this.state.profil} montant={this.state.montant} titre={this.state.titre}/>
+
 </div>
        
 

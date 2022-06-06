@@ -3,7 +3,7 @@ let Produit = require('../models/Produit.model');
 
 router.route('/').get((req, res) => {
   Produit.find()
-    .then(Produits => res.json(Produits))
+    .then(produits => res.json(produits))
     .catch(err => res.status(400).json('Error: ' + err));
 });
 

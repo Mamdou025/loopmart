@@ -1,6 +1,6 @@
 import React from "react"
 import { Panier } from "../App"
-import { Modal,ModalZ } from "./Modal"
+import { Modal } from "./Modal"
 import { Options } from "./Commentaires"
 import { Description } from "./Commentaires"
 import { Commentaires } from "./Commentaires"
@@ -79,17 +79,15 @@ export class Seller extends React.Component{
   
     render(){
       return (
-        <div className='col-xl-3  col-md-4  col-sm-6'>
       <div className="carteproduit">
-        <img  onClick={this.showModal} className="rectangle" src={this.props.src}   />
+        <img  className="rectangle" src={this.props.src}   />
   
   
       <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
-      <ModalZ show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
   
       
-      </div>
       </div>
       )
     }

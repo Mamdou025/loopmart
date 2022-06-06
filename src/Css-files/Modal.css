@@ -11,6 +11,8 @@
     border-radius: 10px;
     background-color: rgba(163, 161, 161, 0.137);
     box-shadow: 2px 2px 2px #aaaaaae1;
+    border: 0px;
+
 }
 .details:hover{
     
@@ -60,6 +62,13 @@
     flex-wrap:nowrap;
     padding:2px;
     height: 500px;
+
+  }
+  @media screen and (min-width: 1400px) {
+    .modalrow{
+      height: 700px;
+    }
+
 
   }
   .modalrow1{
@@ -168,7 +177,7 @@
   width: 70%;
   margin: 1.75rem auto;
   border-radius: 20px;
-  max-width: 1000px;
+  max-width: 1300px;
   background-color: azure;
 }
   @media screen and (min-width: 950px) {
@@ -176,8 +185,8 @@
       width: 70%;
       margin: 1.75rem auto;
       border-radius: 20px;
-      max-width: 1000px;
-      background-color: azure;
+      max-width: 1300px;
+      background-color: rgb(255, 255, 255);
       overflow: auto;
   }
  }

@@ -13,7 +13,7 @@ import { CSSTransition } from "react-transition-group";
 
 
 
-export class ModalZ extends React.Component{
+export class Modal extends React.Component{
 
   //{(this.props.show)?"modal showit":"modal"}
   

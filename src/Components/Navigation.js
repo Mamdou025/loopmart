@@ -1,14 +1,16 @@
 import React from "react";
 import {images} from '../App'
 import { Link,NavLink } from "react-router-dom";
+import { SectionAccueil2 } from "./SectionAccueil";
 
 export class Navigation extends React.Component{
 render(){
-    return(
+    return(<div>
         
       
 
         <div className="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top top-nav-collapse navigation">
+
                     <NavLink to="/" className="navbar-brand logo-image" ><img className ="imagea"src="https://i.ibb.co/1sPG7sX/imageedit-58-3688987062.png" alt="alternative"/></NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                              <span><i className="bi bi-list"></i></span>
@@ -47,8 +49,10 @@ render(){
             </span>
         </div>
 
-
         </div>
+                <SectionAccueil2/>
+           </div>
+
     
     )
 }

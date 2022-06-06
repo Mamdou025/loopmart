@@ -1,6 +1,14 @@
 import { CSSTransition } from 'react-transition-group';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import axios from 'axios';
+import { Navigation } from './Components/Navigation';
+import { Carteproduit} from './Components/Carte'
+import { Mycart } from './Components/Accueil';
+import { SectionAccueil,SectionAccueil2 } from './Components/SectionAccueil';
+import React from 'react';
+import { AjouterProduit } from './Components/Ajouterproduit';
+import { Cartepanier } from './Components/Monpanier';
+import {Pagepanier} from './Components/Monpanier'
 import './Css-files/App.css';
 import './Css-files/CarteProduit.css';
 import './Css-files/FeaturedListings.css';
@@ -9,12 +17,7 @@ import './Css-files/Modal.css'
 import './Css-files/Commentaires.css'
 import './Css-files/AjouterProduit.css'
 import './Css-files/Navbar.css';
-import { Navigation } from './Components/Navigation';
-import { Carteproduit, Listepanier,Listepanier2} from './Components/Carte'
-import { Mycart } from './Components/Accueil';
-import { SectionAccueil,SectionAccueil2 } from './Components/SectionAccueil';
-import React from 'react';
-import { AjouterProduit } from './Components/Ajouterproduit';
+import './Css-files/MonPanier.css'
 
 
 //Small Database 
@@ -82,15 +85,32 @@ class App extends React.Component {
 
   Addproduct=(img)=>{
     let kart = this.state.cart ;
-    console.log(img)
-    kart.push(img)  
-    console.log(kart)
+      const index = this.state.cart.findIndex(object=>object._id === img._id);
+      if(index === -1){
+        console.log("NEW")
+        img.qty=1;
+        kart.push(img)  
+      }else{
+        console.log("Doublon")
+        img.qty++;
+      }
     this.setState({cart:kart})
-    console.log( this.state.cart)
-    
+    console.log(this.state.cart)
+  }
 
+  AddtoCollection=(img)=>{
+
+    let Collection = []
+
+  }
+
+  Addmore=(img)=>{
+    console.log('It works ')
+    img.qty++;
+    console.log(img)
+    
    
-  
+
   }
  
 
@@ -103,11 +123,11 @@ class App extends React.Component {
        
         <Navigation cartcount= {this.state.cart.length} />
         <Routes>
-        <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits} Ajouter2={this.Ajouter2} Addproduct={this.Addproduct} />} />
-       <Route path="/panier" element={ <div><SectionAccueil2/> <div className="row listeproduits"> {this.state.cart.map(img=>{return(<Carteproduit  Addproduct={this.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} /> )})} </div></div> }/>
+        <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits}  Addproduct={this.Addproduct} />} />
+       <Route path="/panier" element={  <Pagepanier cartcount={this.state.cart.length} Addmore={this.Addmore} cart ={this.state.cart}/>}  />
        <Route  path="/Ajouter" element={<AjouterProduit/>}/>  
-       <Route  path="/Collection" element={<SectionAccueil2/>}/>  
-       <Route  path="/Messages" element={<SectionAccueil2/>}/>  
+       <Route  path="/Collection" element={<h1>Collection</h1>}/>  
+       <Route  path="/Messages" element={<h1>Messages</h1>}/>  
 
 
 

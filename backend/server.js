@@ -15,7 +15,7 @@ mongoose.connect(uri, { useNewUrlParser: true,  }
 );
 const connection = mongoose.connection;
 connection.once('open', () => {
-  console.log("MongoDB database connection established successfully (doumz)");
+  console.log("MongoDB database connection established successfully (doumzi)");
 })
 
 const ProduitsRouter = require('./routes/Produits');
