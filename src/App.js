@@ -81,7 +81,7 @@ class App extends React.Component {
         this.setState({ produits: response.data })
         console.log('test')
         console.log(process.env.REACT_APP_BACKEND_URL)
-        console.log('test over ')
+        alert(process.env.REACT_APP_BACKEND_URL)
       })
       .catch((error) => {
         console.log(error);
