@@ -66,7 +66,7 @@ onSubmit(e) {
   };
 console.log(produit);
 window.location = '/Ajouter';
-axios.post('http://localhost:5000/Produits/add', produit)
+axios.post(process.env.REACT_APP_BACKEND_URL+'/Produits/add', produit)
   .then(res => console.log(res.data));
 
 }

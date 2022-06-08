@@ -1,22 +1,26 @@
-import { CSSTransition } from 'react-transition-group';
+
+
+import React from 'react';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import axios from 'axios';
+
+
 import { Navigation } from './Components/Navigation';
-import { Carteproduit} from './Components/Carte'
-import { Mycart } from './Components/Accueil';
-import { SectionAccueil,SectionAccueil2 } from './Components/SectionAccueil';
-import React from 'react';
 import { AjouterProduit } from './Components/Ajouterproduit';
-import { Cartepanier } from './Components/Monpanier';
 import {Pagepanier} from './Components/Monpanier'
+import {Mycart} from './Components/Accueil'
+
+
+
+
 import './Css-files/App.css';
-import './Css-files/CarteProduit.css';
-import './Css-files/FeaturedListings.css';
-import './Css-files/SectionAccueil.css';
+import './Css-files/CarteProduit.css'
+import './Css-files/FeaturedListings.css'
+import './Css-files/SectionAccueil.css'
 import './Css-files/Modal.css'
 import './Css-files/Commentaires.css'
 import './Css-files/AjouterProduit.css'
-import './Css-files/Navbar.css';
+import './Css-files/Navbar.css'
 import './Css-files/MonPanier.css'
 
 
@@ -72,7 +76,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    axios.get('http://localhost:5000/Produits/')
+    axios.get(process.env.REACT_APP_BACKEND_URL+'/Produits/')
       .then(response => {
         this.setState({ produits: response.data })
       })
@@ -87,30 +91,21 @@ class App extends React.Component {
     let kart = this.state.cart ;
       const index = this.state.cart.findIndex(object=>object._id === img._id);
       if(index === -1){
-        console.log("NEW")
         img.qty=1;
         kart.push(img)  
       }else{
-        console.log("Doublon")
         img.qty++;
       }
     this.setState({cart:kart})
-    console.log(this.state.cart)
   }
 
   AddtoCollection=(img)=>{
 
-    let Collection = []
-
+console.log(img)
   }
 
   Addmore=(img)=>{
-    console.log('It works ')
     img.qty++;
-    console.log(img)
-    
-   
-
   }
  
 

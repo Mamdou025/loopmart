@@ -2,13 +2,6 @@ import React from "react";
 import { Carteproduit } from "./Carte";
 import { Entete } from  './Entetes';
 import { SectionAccueil } from './SectionAccueil';
-import { images } from "../App";
-
-
-
-
-
-
 
 
 
