@@ -79,6 +79,7 @@ class App extends React.Component {
     axios.get(process.env.REACT_APP_BACKEND_URL+'/Produits/')
       .then(response => {
         this.setState({ produits: response.data })
+        console.log(process.env.REACT_APP_BACKEND_URL)
       })
       .catch((error) => {
         console.log(error);
