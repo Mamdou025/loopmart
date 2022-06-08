@@ -66,7 +66,7 @@ onSubmit(e) {
   };
 console.log(produit);
 window.location = '/Ajouter';
-axios.post(process.env.REACT_APP_BACKEND_URL+'/Produits/add', produit)
+axios.post('https://loopmart.herokuapp.com/Produits/add', produit)
   .then(res => console.log(res.data));
 
 }

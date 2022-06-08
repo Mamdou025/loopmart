@@ -76,7 +76,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    axios.get(process.env.REACT_APP_BACKEND_URL+'/Produits/')
+    axios.get('https://loopmart.herokuapp.com/Produits/')
       .then(response => {
         this.setState({ produits: response.data })
         console.log(process.env.REACT_APP_BACKEND_URL)
