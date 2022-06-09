@@ -66,7 +66,8 @@ onSubmit(e) {
   };
 axios.post('https://loopmart.herokuapp.com/Produits/add', produit)
   .then(res => console.log(res.data));
-  window.location = '/Ajouter';
+  //window.location = '/Ajouter';
+  alert(produit)
 
 
 }

@@ -198,7 +198,7 @@
     margin: 1.75rem auto;
     border-radius: 20px;
     max-width: 680px;
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
     overflow: auto;
 
   }
