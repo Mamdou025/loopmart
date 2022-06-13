@@ -23,6 +23,7 @@ import './Css-files/AjouterProduit.css'
 import './Css-files/Navbar.css'
 import './Css-files/MonPanier.css'
 
+require('dotenv').config();
 
 //Small Database 
 
@@ -79,6 +80,7 @@ class App extends React.Component {
     axios.get('https://loopmart.herokuapp.com/Produits/')
       .then(response => {
         this.setState({ produits: response.data })
+        console.log(process.env.REACT_APP_BACKEND_URL)
       })
       .catch((error) => {
         console.log(error);

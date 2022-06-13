@@ -1,9 +1,7 @@
 import React from "react"
 import { Panier } from "../App"
 import { Modal } from "./Modal"
-import { Options } from "./Commentaires"
-import { Description } from "./Commentaires"
-import { Commentaires } from "./Commentaires"
+
 
 
 

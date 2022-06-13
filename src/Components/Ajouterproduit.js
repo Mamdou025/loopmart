@@ -2,7 +2,6 @@ import React from "react";
 import { Carteproduit } from "./Carte";
 import { Entete } from "./Entetes";
 import { images } from "../App";
-import { SectionAccueil2 } from "./SectionAccueil";
 import axios from "axios";
 
 

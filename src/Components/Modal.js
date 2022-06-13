@@ -1,7 +1,6 @@
 import { Commentaires, Description } from "./Commentaires";
 import React from "react";
 import { Options } from "./Commentaires";
-import { CSSTransition } from "react-transition-group";
 
 
 
