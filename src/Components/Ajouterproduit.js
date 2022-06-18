@@ -63,9 +63,11 @@ onSubmit(e) {
     titre: this.state.titre,
 
   };
-
+alert("poduit: "+produit.montant)
 axios.post('https://loopmart.herokuapp.com/Produits/add', produit)
   .then(res => console.log(res.data));
+  alert("poduit entré : "+produit.montant)
+
   window.location = '/Ajouter';
 
 

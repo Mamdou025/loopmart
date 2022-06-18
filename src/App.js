@@ -9,6 +9,7 @@ import { Navigation } from './Components/Navigation';
 import { AjouterProduit } from './Components/Ajouterproduit';
 import {Pagepanier} from './Components/Monpanier'
 import {Mycart} from './Components/Accueil'
+import { InstaCarteproduit } from './Components/Carte';
 
 
 
@@ -22,6 +23,7 @@ import './Css-files/Commentaires.css'
 import './Css-files/AjouterProduit.css'
 import './Css-files/Navbar.css'
 import './Css-files/MonPanier.css'
+import { Carteproduit } from './Components/Carte';
 
 require('dotenv').config();
 
@@ -123,7 +125,7 @@ console.log(img)
         <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits}  Addproduct={this.Addproduct} />} />
        <Route path="/panier" element={  <Pagepanier cartcount={this.state.cart.length} Addmore={this.Addmore} cart ={this.state.cart}/>}  />
        <Route  path="/Ajouter" element={<AjouterProduit/>}/>  
-       <Route  path="/Collection" element={<h1>Collection</h1>}/>  
+       <Route  path="/Collection" element={<div><h1>Collection</h1><div className='row'><InstaCarteproduit /></div></div>}/>  
        <Route  path="/Messages" element={<h1>Messages</h1>}/>  
 
 

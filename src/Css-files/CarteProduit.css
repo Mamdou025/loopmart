@@ -84,6 +84,22 @@
   border-radius: 20px;
 }
 
+
+.imageContainer {
+  min-width: 250px;
+  min-height: 350px;
+  position: relative;
+  width: 25%;
+  padding-bottom: 25%;
+  height: 0;
+}
+
+.rectangleig {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
 .productinfo{
 display: block;
 }
