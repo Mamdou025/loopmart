@@ -78,17 +78,36 @@ class App extends React.Component {
   }
 
 
-  componentDidMount() {
-    axios.get('https://loopmart.herokuapp.com/Produits/')
-      .then(response => {
-        this.setState({ produits: response.data })
-        console.log(process.env.REACT_APP_BACKEND_URL)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
+// Replace your existing componentDidMount with this:
 
+async componentDidMount() {
+  try {
+    const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+    const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
+    
+    const response = await fetch(`${supabaseUrl}/rest/v1/produits`, {
+      method: 'GET',
+      headers: {
+        'apikey': supabaseKey,
+        'Authorization': `Bearer ${supabaseKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    this.setState({ produits: data });
+    console.log('✅ Products loaded from Supabase:', data.length, 'items');
+    
+  } catch (error) {
+    console.log('❌ Error:', error);
+    // Fallback to your existing sample data or empty array
+    this.setState({ produits: [] });
+  }
+}
 
 
   Addproduct=(img)=>{
