@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
-import axios from 'axios';
 
 
 import { Navigation } from './Components/Navigation';
@@ -23,7 +22,6 @@ import './Css-files/Commentaires.css'
 import './Css-files/AjouterProduit.css'
 import './Css-files/Navbar.css'
 import './Css-files/MonPanier.css'
-import { Carteproduit } from './Components/Carte';
 
 require('dotenv').config();
 
