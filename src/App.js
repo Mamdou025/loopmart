@@ -104,7 +104,9 @@ async componentDidMount() {
     
   } catch (error) {
     console.log('❌ Error:', error);
-    // Fallback to your existing sample data or empty array
+
+    //Fallback to your existing sample data or empty array
+
     this.setState({ produits: [] });
   }
 }
