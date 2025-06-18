@@ -23,7 +23,6 @@ import './Css-files/AjouterProduit.css'
 import './Css-files/Navbar.css'
 import './Css-files/MonPanier.css'
 
-require('dotenv').config();
 
 //Small Database 
 
@@ -83,6 +82,10 @@ async componentDidMount() {
     const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
     const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
     
+    if (!supabaseUrl || !supabaseKey) {
+      throw new Error('Missing Supabase credentials');
+    }
+
     const response = await fetch(`${supabaseUrl}/rest/v1/produits`, {
       method: 'GET',
       headers: {
@@ -102,13 +105,10 @@ async componentDidMount() {
     
   } catch (error) {
     console.log('❌ Error:', error);
-
-    //Fallback to your existing sample data or empty array
-
-    this.setState({ produits: [] });
+    // Use your sample data as fallback
+    this.setState({ produits: images });
   }
 }
-
 
   Addproduct=(img)=>{
     let kart = this.state.cart ;
