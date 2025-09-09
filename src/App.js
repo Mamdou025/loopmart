@@ -97,9 +97,13 @@ async componentDidMount() {
     this.setState({ cart: kart });
   };
 
-  AddtoCollection=(img)=>{
-
-console.log(img)
+  AddtoCollection = (img) => {
+    const productId = img.id || `${img.src}-${img.titre}`;
+    this.setState(prevState => {
+      const exists = prevState.collection.find(item => item.id === productId);
+      if (exists) return null;
+      return { collection: [...prevState.collection, { ...img, id: productId }] };
+    });
   }
 
   Addmore=(img)=>{
@@ -122,6 +126,7 @@ console.log(img)
                   elementscart={this.state.cart}
                   produits={this.state.produits}
                   Addproduct={this.Addproduct}
+                  AddtoCollection={this.AddtoCollection}
                   searchQuery={this.state.searchQuery}
                   onSearch={this.handleSearch}
                 />
@@ -135,6 +140,7 @@ console.log(img)
                   Addmore={this.Addmore}
                   cart={this.state.cart}
                   Addproduct={this.Addproduct}
+                  AddtoCollection={this.AddtoCollection}
                 />
               }
             />
@@ -145,7 +151,7 @@ console.log(img)
                 <div>
                   <h1>Collection</h1>
                   <div className='row'>
-                    <InstaCarteproduit Addproduct={this.Addproduct} />
+                    <InstaCarteproduit Addproduct={this.Addproduct} AddtoCollection={this.AddtoCollection} />
                   </div>
                 </div>
               }
