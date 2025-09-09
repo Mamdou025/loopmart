@@ -22,7 +22,7 @@ export class Modal extends React.Component{
 
 
       <div className="modal fade" id={`${this.props.auteur+this.props.montant}`} tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered" role="document">
+        <div className="modal-dialog top-aligned" role="document">
       
           <div className="modalelements">
           <div className="modalrow1">
