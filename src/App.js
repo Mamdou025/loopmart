@@ -34,7 +34,11 @@ export const Styles = { carteproduit:["carteproduit","carteproduit2","carteprodu
 class App extends React.Component {
   constructor(){
     super();
-   this.state={ produits:[],cart:[]}
+   this.state={ produits:[],cart:[], searchQuery:''}
+  }
+
+  handleSearch = (query) => {
+    this.setState({searchQuery: query});
   }
 
 
@@ -118,6 +122,8 @@ console.log(img)
                   elementscart={this.state.cart}
                   produits={this.state.produits}
                   Addproduct={this.Addproduct}
+                  searchQuery={this.state.searchQuery}
+                  onSearch={this.handleSearch}
                 />
               }
             />
