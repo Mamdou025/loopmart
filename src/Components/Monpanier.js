@@ -147,7 +147,19 @@ export class Cartepanier extends React.Component{
 
  export  class ListePanier extends React.Component{
     render(){
-      return(this.props.cart.map(img=>{ return(<Cartepanier Addmore={this.props.Addmore.bind(this,img)} id={img._id} titre={img.titre} key={img.montant+img.src} src={img.src} description={img.description} auteur={img.auteur} montant={img.montant} qty={img.qty}/>)}))
+      return this.props.cart.map((img) => (
+        <Cartepanier
+          Addmore={this.props.Addmore.bind(this, img)}
+          id={img.id}
+          titre={img.titre}
+          key={img.id}
+          src={img.src}
+          description={img.description}
+          auteur={img.auteur}
+          montant={img.montant}
+          qty={img.qty}
+        />
+      ));
     }
   }
 

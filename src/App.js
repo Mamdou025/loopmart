@@ -63,21 +63,30 @@ async componentDidMount() {
     }
 
     const data = await response.json();
-    this.setState({ produits: data });
-    console.log('✅ Products loaded from Supabase:', data.length, 'items');
+    const dataWithIds = data.map((p, idx) => ({
+      ...p,
+      id: p.id || p._id || `${p.src || ''}-${p.titre || idx}`
+    }));
+    this.setState({ produits: dataWithIds });
+    console.log('✅ Products loaded from Supabase:', dataWithIds.length, 'items');
     
   } catch (error) {
     console.log('❌ Error:', error);
-    // Use your sample data as fallback
-    this.setState({ produits: images });
+    // Use your sample data as fallback, ensure each item has an id
+    const localData = images.map((p, idx) => ({
+      ...p,
+      id: p.id || `${p.src || ''}-${p.titre || idx}`
+    }));
+    this.setState({ produits: localData });
   }
 }
 
   Addproduct = (img) => {
+    const productId = img.id || img._id || `${img.src}-${img.titre}`;
     const kart = [...this.state.cart];
-    const index = kart.findIndex((object) => object._id === img._id);
+    const index = kart.findIndex((object) => object.id === productId);
     if (index === -1) {
-      kart.push({ ...img, qty: 1 });
+      kart.push({ ...img, id: productId, qty: 1 });
     } else {
       kart[index].qty++;
     }
