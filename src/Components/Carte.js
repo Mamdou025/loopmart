@@ -1,5 +1,5 @@
 import React from "react"
-import { Panier } from "../App"
+import { Panier } from "../data/images"
 import { Modal } from "./Modal"
 import axios from 'axios';
 

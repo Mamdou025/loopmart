@@ -1,7 +1,7 @@
 import React from "react";
 import { Carteproduit } from "./Carte";
 import { Entete } from "./Entetes";
-import { images } from "../App";
+import { images } from "../data/images";
 import axios from "axios";
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import {Carteproduit,} from './Carte'
-import {images} from '../App'
+import {images} from '../data/images'
 
  
 

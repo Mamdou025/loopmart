@@ -1,5 +1,5 @@
 import React from "react";
-import {images} from '../App'
+import {images} from '../data/images'
 import { Link,NavLink } from "react-router-dom";
 import { SectionAccueil2 } from "./SectionAccueil";
 
