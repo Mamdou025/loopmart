@@ -8,7 +8,7 @@ import { Navigation } from './Components/Navigation';
 import { AjouterProduit } from './Components/Ajouterproduit';
 import {Pagepanier} from './Components/Monpanier'
 import {Mycart} from './Components/Accueil'
-import { InstaCarteproduit } from './Components/Carte';
+import CollectionList from './Components/CollectionList';
 
 
 
@@ -145,17 +145,7 @@ async componentDidMount() {
               }
             />
             <Route path="/Ajouter" element={<AjouterProduit />} />
-            <Route
-              path="/Collection"
-              element={
-                <div>
-                  <h1>Collection</h1>
-                  <div className='row'>
-                    <InstaCarteproduit Addproduct={this.Addproduct} AddtoCollection={this.AddtoCollection} />
-                  </div>
-                </div>
-              }
-            />
+            <Route path="/Collection" element={<CollectionList items={this.state.collection} Addproduct={this.Addproduct} AddtoCollection={this.AddtoCollection} />} />
             <Route path="/Messages" element={<h1>Messages</h1>} />
           </Routes>
         </div>
