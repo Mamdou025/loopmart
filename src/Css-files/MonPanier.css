@@ -3,8 +3,8 @@
 /* Cart layout */
   .basket-product {
     border-bottom: 1px solid var(--bs-gray-300);
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
     box-shadow: 2px 2px #88888877;
     border-radius: 1rem;
     font-family: 'Poppins', sans-serif;
@@ -15,8 +15,18 @@
 }
 
 .product-image img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 150px;
+  max-height: 150px;
   border-radius: 0.65rem;
+}
+
+.basket-product .product-title {
+  font-size: 1.1rem;
+}
+
+.basket-product .product-price {
+  font-size: 1.25rem;
 }
 
   .summary {

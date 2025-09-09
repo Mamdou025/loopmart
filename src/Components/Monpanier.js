@@ -137,11 +137,13 @@ export class Cartepanier extends React.Component{
       return (
         <div className="basket-product card mb-3">
           <div className="row g-3 align-items-center">
-            <div className="col-4 col-md-3">
-              <img src={this.props.src} alt="Produit" className="img-fluid rounded" />
+            <div className="col-5 col-md-4">
+              <div className="product-image">
+                <img src={this.props.src} alt="Produit" className="img-fluid rounded" />
+              </div>
             </div>
-            <div className="col-8 col-md-5">
-              <h3 className="h6"><strong><span className="item-quantity">{this.props.qty} x</span></strong> {this.props.titre}</h3>
+            <div className="col-7 col-md-4">
+              <h3 className="product-title mb-1"><strong><span className="item-quantity">{this.props.qty} x</span></strong> {this.props.titre}</h3>
               <p className="mb-1">Product Code - {this.props.id}</p>
               <div className="d-flex flex-column mt-2">
                 <button
@@ -158,7 +160,7 @@ export class Cartepanier extends React.Component{
               </div>
             </div>
             <div className="col-12 col-md-4 text-md-end">
-              <h4 className="mb-1">Prix : {this.props.montant}$</h4>
+              <h4 className="product-price mb-1">Prix : {this.props.montant}$</h4>
               <div className="d-flex align-items-center justify-content-center my-2">
                 <button className="prdct-qty-btn" type="button"><i className="fa fa-minus"></i></button>
                 <input type="text" name="qty" className="qty-input" disabled value="1" />
