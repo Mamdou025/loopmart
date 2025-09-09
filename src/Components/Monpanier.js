@@ -13,6 +13,11 @@ function sendCartToWhatsApp(cart) {
 
 export class Pagepanier extends React.Component {
   render() {
+    const subtotal = this.props.cart.reduce(
+      (sum, item) => sum + item.montant * item.qty,
+      0
+    );
+    const total = subtotal;
     return (
       <div>
         <Entete titre={"Mon panier"} />
@@ -28,7 +33,9 @@ export class Pagepanier extends React.Component {
                 </div>
                 <div className="summary-subtotal">
                   <div className="subtotal-title">Subtotal</div>
-                  <div className="subtotal-value final-value" id="basket-subtotal">130.00</div>
+                  <div className="subtotal-value final-value" id="basket-subtotal">
+                    {subtotal.toFixed(2)}
+                  </div>
                 </div>
                 <div className="summary-delivery">
                   <select name="delivery-collection" className="summary-delivery-selection form-select">
@@ -43,7 +50,9 @@ export class Pagepanier extends React.Component {
                 </div>
                 <div className="summary-total">
                   <div className="total-title">Total</div>
-                  <div className="total-value final-value" id="basket-total">130.00</div>
+                  <div className="total-value final-value" id="basket-total">
+                    {total.toFixed(2)}
+                  </div>
                 </div>
                 <div className="basket-module">
                   <label htmlFor="promo-code">Enter a promotional code</label>
