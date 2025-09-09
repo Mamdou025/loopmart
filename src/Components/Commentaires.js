@@ -1,5 +1,5 @@
 import React from "react";
-import { images } from "../App";
+import { images } from "../data/images";
 
 
 
