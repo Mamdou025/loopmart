@@ -39,7 +39,7 @@ render(){
                 
 
                 <li className="nav-item">
-                    <NavLink to="/panier" className="nav-link page-scroll" >Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.cartcount} </span></NavLink>
+                    <NavLink to="/panier" className="nav-link page-scroll" >Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.totalCount} </span></NavLink>
                 </li>
             </ul>
 

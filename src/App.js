@@ -73,17 +73,16 @@ async componentDidMount() {
   }
 }
 
-  Addproduct=(img)=>{
-    let kart = this.state.cart ;
-      const index = this.state.cart.findIndex(object=>object._id === img._id);
-      if(index === -1){
-        img.qty=1;
-        kart.push(img)  
-      }else{
-        img.qty++;
-      }
-    this.setState({cart:kart})
-  }
+  Addproduct = (img) => {
+    const kart = [...this.state.cart];
+    const index = kart.findIndex((object) => object._id === img._id);
+    if (index === -1) {
+      kart.push({ ...img, qty: 1 });
+    } else {
+      kart[index].qty++;
+    }
+    this.setState({ cart: kart });
+  };
 
   AddtoCollection=(img)=>{
 
@@ -96,28 +95,50 @@ console.log(img)
  
 
 
-  render(){
+  render() {
+    const cartCount = this.state.cart.reduce((sum, p) => sum + p.qty, 0);
     return (
       <BrowserRouter>
-      <div className="App">
-        
-       
-        <Navigation cartcount= {this.state.cart.length} />
-        <Routes>
-        <Route path="/" element={<Mycart elementscart={this.state.cart} produits={this.state.produits}  Addproduct={this.Addproduct} />} />
-       <Route path="/panier" element={  <Pagepanier cartcount={this.state.cart.length} Addmore={this.Addmore} cart ={this.state.cart}/>}  />
-       <Route  path="/Ajouter" element={<AjouterProduit/>}/>  
-       <Route  path="/Collection" element={<div><h1>Collection</h1><div className='row'><InstaCarteproduit /></div></div>}/>  
-       <Route  path="/Messages" element={<h1>Messages</h1>}/>  
-
-
-
-        </Routes>
-        
+        <div className="App">
+          <Navigation totalCount={cartCount} />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Mycart
+                  elementscart={this.state.cart}
+                  produits={this.state.produits}
+                  Addproduct={this.Addproduct}
+                />
+              }
+            />
+            <Route
+              path="/panier"
+              element={
+                <Pagepanier
+                  totalCount={cartCount}
+                  Addmore={this.Addmore}
+                  cart={this.state.cart}
+                />
+              }
+            />
+            <Route path="/Ajouter" element={<AjouterProduit />} />
+            <Route
+              path="/Collection"
+              element={
+                <div>
+                  <h1>Collection</h1>
+                  <div className='row'>
+                    <InstaCarteproduit />
+                  </div>
+                </div>
+              }
+            />
+            <Route path="/Messages" element={<h1>Messages</h1>} />
+          </Routes>
         </div>
-        </BrowserRouter>
+      </BrowserRouter>
     );
-
   }
 
   

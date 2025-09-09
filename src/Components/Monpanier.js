@@ -19,7 +19,7 @@ export class Pagepanier extends React.Component{
       </div>
       <aside>
        <div class="summary">
-        <div class="summary-total-items"><span class="total-items">{this.props.cartcount}</span> Items in your Bag</div>
+       <div class="summary-total-items"><span class="total-items">{this.props.totalCount}</span> Items in your Bag</div>
         <div class="summary-subtotal">
           <div class="subtotal-title">Subtotal</div>
           <div class="subtotal-value final-value" id="basket-subtotal">130.00</div>
