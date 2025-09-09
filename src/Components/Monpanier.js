@@ -112,8 +112,6 @@ export class Pagepanier extends React.Component {
     }
 
   }
-
-
 export class Cartepanier extends React.Component{
     constructor(){
       super();
@@ -183,7 +181,7 @@ export class Cartepanier extends React.Component{
     }
   }
 
-  export class Total extends React.Component{
+export class Total extends React.Component{
     render(){
       return(
 
@@ -196,6 +194,6 @@ export class Cartepanier extends React.Component{
 
 
       )
-    }
   }
+}
     
