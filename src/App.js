@@ -34,7 +34,7 @@ export const Styles = { carteproduit:["carteproduit","carteproduit2","carteprodu
 class App extends React.Component {
   constructor(){
     super();
-   this.state={ produits:[],cart:[], searchQuery:''}
+   this.state={ produits:[], cart:[], collection: [], searchQuery: ''}
   }
 
   handleSearch = (query) => {
