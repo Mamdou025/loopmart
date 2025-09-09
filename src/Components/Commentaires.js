@@ -140,12 +140,21 @@ export class Commentaires extends React.Component{
 export class Description extends React.Component{
 
 
-    
+
     render(){
+        const product = {
+            src: this.props.src,
+            auteur: this.props.auteur,
+            montant: this.props.montant,
+            profil: this.props.profil,
+            description: this.props.description,
+            titre: this.props.titre,
+            _id: this.props._id
+        };
         return(
             <div className="row" id={this.props.iddesc}>
                 <div className="descrip">
-                    <h4 className="opt1 ">{this.props.montant}</h4>
+                    <h4 className="opt1 ">{this.props.montant + '$'}</h4>
                 <h5>Description</h5>
                 <div > <p className="opt1  ">{this.props.description}</p></div>
                 </div>
@@ -158,7 +167,7 @@ export class Description extends React.Component{
                     </div>
                     <div className="opt1">
                     <h6>Ajouter au panier</h6>
-                    <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus bigger"></i></button>
+                    <button type="button" className="btn btn-light plus" onClick={() => this.props.Addproduct(product)}><i className="bi bi-cart-plus bigger"></i></button>
                     </div>
                     <div className="opt1">
                     <h6>Enregistrer</h6>

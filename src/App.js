@@ -118,6 +118,7 @@ console.log(img)
                 <Pagepanier
                   totalCount={cartCount}
                   Addmore={this.Addmore}
+                  Addproduct={this.Addproduct}
                   cart={this.state.cart}
                 />
               }
@@ -129,7 +130,7 @@ console.log(img)
                 <div>
                   <h1>Collection</h1>
                   <div className='row'>
-                    <InstaCarteproduit />
+                    <InstaCarteproduit Addproduct={this.Addproduct} />
                   </div>
                 </div>
               }

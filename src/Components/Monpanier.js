@@ -20,7 +20,7 @@ export class Pagepanier extends React.Component{
         <main>
         <div className="basket">
        
-        <ListePanier  Addmore={this.props.Addmore} cart={this.props.cart}/>
+        <ListePanier  Addmore={this.props.Addmore} Addproduct={this.props.Addproduct} cart={this.props.cart}/>
       </div>
       <aside>
        <div class="summary">
@@ -101,7 +101,7 @@ export class Pagepanier extends React.Component{
         </div>
     </div>
 </div>
-<Modal src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} />
+<Modal Addproduct={this.props.Addproduct} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} />
 </div>)
     }
 
@@ -153,7 +153,7 @@ export class Pagepanier extends React.Component{
 
 
 
-<Modal src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} />
+<Modal Addproduct={this.props.Addproduct} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} />
 </div>)
     }
 
@@ -163,7 +163,7 @@ export class Pagepanier extends React.Component{
 
  export  class ListePanier extends React.Component{
     render(){
-      return(this.props.cart.map(img=>{ return(<Cartepanier Addmore={this.props.Addmore.bind(this,img)} id={img._id} titre={img.titre} key={img.montant+img.src} src={img.src} description={img.description} auteur={img.auteur} montant={img.montant} qty={img.qty}/>)}))
+      return(this.props.cart.map(img=>{ return(<Cartepanier Addmore={this.props.Addmore.bind(this,img)} Addproduct={this.props.Addproduct} id={img._id} titre={img.titre} key={img.montant+img.src} src={img.src} description={img.description} auteur={img.auteur} montant={img.montant} qty={img.qty} profil={img.profil}/>)}))
     }
   }
 
