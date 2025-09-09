@@ -158,7 +158,23 @@ export class Description extends React.Component{
                     </div>
                     <div className="opt1">
                     <h6>Ajouter au panier</h6>
-                    <button type="button" className="btn btn-light plus"><i className="bi bi-cart-plus bigger"></i></button>
+                    <button
+                      type="button"
+                      className="btn btn-light plus"
+                      onClick={() =>
+                        this.props.Addproduct({
+                          src: this.props.src,
+                          auteur: this.props.auteur,
+                          montant: this.props.montant,
+                          profil: this.props.profil,
+                          titre: this.props.titre,
+                          description: this.props.description,
+                          id: this.props.id,
+                        })
+                      }
+                    >
+                      <i className="bi bi-cart-plus bigger"></i>
+                    </button>
                     </div>
                     <div className="opt1">
                     <h6>Enregistrer</h6>
