@@ -77,7 +77,7 @@ export class Pagepanier extends React.Component {
     <div className="d-flex justify-content-center row">
         <div className="col-md-10">
             <div className="row p-2 bg-white border rounded">
-                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" src={this.props.src}/></div>
+                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" src={this.props.src} alt={this.props.titre}/></div>
                 <div className="col-md-6 mt-1">
                     <h5>{this.props.titre}</h5>
                     <div className="d-flex flex-row">
@@ -90,7 +90,19 @@ export class Pagepanier extends React.Component {
                         <h4 className="mr-1">{this.props.montant} $</h4>
                     </div>
                     <h6 className="text-success">Free shipping</h6>
-                    <div className="d-flex flex-column mt-4"><button className="btn btn-primary btn-sm gradcolor" type="button"  data-toggle="modal" data-target={"#"+`${this.props.auteur+this.props.montant}`}  >Details</button><button className="btn btn-outline-primary btn-sm mt-2 " type="button">+ Collection</button></div>
+                    <div className="d-flex flex-column mt-4">
+                      <button
+                        className="btn btn-primary btn-sm gradcolor"
+                        type="button"
+                        data-toggle="modal"
+                        data-target={`#${this.props.auteur + this.props.montant}`}
+                      >
+                        Details
+                      </button>
+                      <button className="btn btn-outline-primary btn-sm mt-2" type="button">
+                        + Collection
+                      </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,8 +135,17 @@ export class Cartepanier extends React.Component{
               <h3 className="h6"><strong><span className="item-quantity">{this.props.qty} x</span></strong> {this.props.titre}</h3>
               <p className="mb-1">Product Code - {this.props.id}</p>
               <div className="d-flex flex-column mt-2">
-                <button className="btn btn-primary btn-sm gradcolor" type="button" data-toggle="modal" data-target={"#" + `${this.props.auteur + this.props.montant}`}>Details</button>
-                <button className="btn btn-outline-primary btn-sm mt-2" type="button">+ Collection</button>
+                <button
+                  className="btn btn-primary btn-sm gradcolor"
+                  type="button"
+                  data-toggle="modal"
+                  data-target={`#${this.props.auteur + this.props.montant}`}
+                >
+                  Details
+                </button>
+                <button className="btn btn-outline-primary btn-sm mt-2" type="button">
+                  + Collection
+                </button>
               </div>
             </div>
             <div className="col-12 col-md-4 text-md-end">
