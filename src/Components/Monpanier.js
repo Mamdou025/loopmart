@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal } from "./Modal";
-import './Carte';
 import { Entete } from './Entetes';
 
 function sendCartToWhatsApp(cart) {
