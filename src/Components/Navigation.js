@@ -20,26 +20,26 @@ render(){
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                    <NavLink to="/" className="nav-link page-scroll"><span className="menuitem">Accueil <i className="bi bi-house-door-fill"></i>  </span><span className="sr-only">(current)</span></NavLink>
+                    <NavLink to="/" className="nav-link"><span className="menuitem">Accueil <i className="bi bi-house-door-fill"></i>  </span><span className="sr-only">(current)</span></NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link page-scroll" to="/Collection">Ma collection <i className="bi bi-bookmarks-fill"></i></NavLink>
+                    <NavLink className="nav-link" to="/Collection">Ma collection <i className="bi bi-bookmarks-fill"></i></NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link page-scroll" to="/Messages">Messages <i className="bi bi-chat-left-fill"></i>  </NavLink>
+                    <NavLink className="nav-link" to="/Messages">Messages <i className="bi bi-chat-left-fill"></i>  </NavLink>
                 </li>
 
               
 
 
                 <li className="nav-item">
-                    <NavLink className="nav-link page-scroll" to="/Ajouter">Ajouter un produit  <i className="bi bi-plus-square-fill"></i></NavLink>
+                    <NavLink className="nav-link" to="/Ajouter">Ajouter un produit  <i className="bi bi-plus-square-fill"></i></NavLink>
                 </li>
 
                 
 
                 <li className="nav-item">
-                    <NavLink to="/panier" className="nav-link page-scroll" >Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.cartcount} </span></NavLink>
+                    <NavLink to="/panier" className="nav-link" >Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.cartcount} </span></NavLink>
                 </li>
             </ul>
 

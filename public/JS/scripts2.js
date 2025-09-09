@@ -10,10 +10,13 @@ $(window).on('scroll load', function() {
   $(function() {
     $(document).on('click', 'a.page-scroll', function(event) {
         var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 600, 'easeInOutExpo');
-        event.preventDefault();
+        var target = $anchor.attr('href');
+        if (target && target.startsWith('#')) {
+            $('html, body').stop().animate({
+                scrollTop: $(target).offset().top
+            }, 600, 'easeInOutExpo');
+            event.preventDefault();
+        }
     });
 });
 
