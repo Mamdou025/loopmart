@@ -3,8 +3,13 @@ import { Modal } from "./Modal";
 import './Carte'
 import { Entete } from  './Entetes';
 
-
-
+function sendCartToWhatsApp(cart) {
+  const orderMessage = cart
+    .map(item => `- ${item.titre} x${item.qty} (${item.montant}$)`)
+    .join('\n');
+  const url = `https://wa.me/5147727974?text=${encodeURIComponent(orderMessage)}`;
+  window.open(url, '_blank');
+}
 
 export class Pagepanier extends React.Component{
   render(){
@@ -52,6 +57,7 @@ export class Pagepanier extends React.Component{
 
         <div class="summary-checkout">
           <button class="checkout-cta">Go to Secure Checkout</button>
+          <button class="checkout-cta" onClick={() => sendCartToWhatsApp(this.props.cart)}>Order via WhatsApp</button>
         </div>
       </div>
        </aside>
