@@ -17,56 +17,92 @@ export class Modal extends React.Component{
   //{(this.props.show)?"modal showit":"modal"}
   
     render(){
-    return (
-      
+      const {
+        show,
+        src,
+        montant,
+        auteur,
+        profil,
+        description,
+        titre,
+        Addproduct,
+      } = this.props;
+      return (
+        <div
+          className="modal fade"
+          id={`${auteur + montant}`}
+          tabIndex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog top-aligned" role="document">
+            <div className="modalelements">
+              <div className="modalrow1">
+                <div className="modalcell">
+                  <div>
+                    <div className="seller">
+                      <div className="options">
+                        <button
+                          type="button"
+                          className="btn btn-light plus"
+                          data-dismiss="modal"
+                          aria-label="Close"
+                        >
+                          <i className="bi bi-arrows-angle-contract"></i>
+                        </button>
+                      </div>
 
+                      <div className="sellerinfo">
+                        <span className="auteur">{auteur}</span>
+                        <img className="profil" src={profil} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="modalrow">
+                <div className="modalcell" id="i7ai">
+                  <a href={src}>
+                    <img className="rectangle" src={src} />
+                  </a>
+                </div>
+                <div className="modalcell2">
+                  <Options
+                    iddesc={`${auteur + montant + montant}desc`}
+                    idcom={`${auteur + montant + montant}`}
+                  />
 
-      <div className="modal fade" id={`${this.props.auteur+this.props.montant}`} tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div className="modal-dialog top-aligned" role="document">
-      
-          <div className="modalelements">
-          <div className="modalrow1">
-          <div className="modalcell">
-          <div>
-            <div className="seller">
-            <div className="options">
-           <button type="button" className="btn btn-light plus"data-dismiss="modal" aria-label="Close"><i className="bi bi-arrows-angle-contract"></i></button>
-      
-          </div>
-              
-            <div className="sellerinfo">
-                <span  className="auteur">{this.props.auteur}</span> 
-              <img className="profil" src={this.props.profil} />
+                  <Description
+                    show={show}
+                    idcom={`${auteur + montant + montant}`}
+                    iddesc={`${auteur + montant + montant}desc`}
+                    src={src}
+                    montant={montant + '$'}
+                    auteur={auteur}
+                    profil={profil}
+                    description={description}
+                    titre={titre}
+                    Addproduct={Addproduct}
+                  />
+
+                  <Commentaires
+                    show={show}
+                    idcom={`${auteur + montant + montant}`}
+                    iddesc={`${auteur + montant + montant}desc`}
+                    src={src}
+                    montant={montant + '$'}
+                    auteur={auteur}
+                    profil={profil}
+                    description={description}
+                    titre={titre}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        
-          </div>
-      
-          </div>
         </div>
-        <div className="modalrow">
-       
-          <div className="modalcell" id="i7ai">
-        
-          <a href={this.props.src}><img className="rectangle" src={this.props.src} /></a>
-          </div>
-          <div className="modalcell2">
-            <Options  iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`}   idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} />
-            
-            <Description  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} Addproduct={this.props.Addproduct}/>
-
-
-            <Commentaires  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre}/>
-      
-          </div>
-        </div>
-          </div>
-      
-        </div>
-      </div>
-            
-     
-    )
+      );
     }
   }
   

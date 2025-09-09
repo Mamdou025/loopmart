@@ -123,7 +123,7 @@ export class Seller extends React.Component{
   
   
       <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
-      
+
       <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} Addproduct={this.props.Addproduct}/>
   
       
@@ -197,7 +197,7 @@ axios.request(options)
   
   
       
-      <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.state.igdesc}/>
+        <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.state.igdesc} Addproduct={this.props.Addproduct}/>
   
       
       </div>

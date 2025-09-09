@@ -161,8 +161,8 @@ export class Description extends React.Component{
                     <button
                       type="button"
                       className="btn btn-light plus"
-                      onClick={() =>
-                        this.props.Addproduct({
+                      onClick={() => {
+                        const product = {
                           src: this.props.src,
                           auteur: this.props.auteur,
                           montant: this.props.montant,
@@ -170,8 +170,9 @@ export class Description extends React.Component{
                           titre: this.props.titre,
                           description: this.props.description,
                           id: this.props.id,
-                        })
-                      }
+                        };
+                        this.props.Addproduct(product);
+                      }}
                     >
                       <i className="bi bi-cart-plus bigger"></i>
                     </button>
