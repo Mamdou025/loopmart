@@ -1,14 +1,13 @@
 
 
 import React from 'react';
-import { BrowserRouter,Route,Routes } from 'react-router-dom';
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Navigation } from './Components/Navigation';
 import { AjouterProduit } from './Components/Ajouterproduit';
-import {Pagepanier} from './Components/Monpanier'
-import {Mycart} from './Components/Accueil'
-import { InstaCarteproduit } from './Components/Carte';
+import { Pagepanier } from './Components/Monpanier';
+import { Mycart } from './Components/Accueil';
+import { Collection } from './Components/Collection';
 
 
 
@@ -32,9 +31,9 @@ export const Styles = { carteproduit:["carteproduit","carteproduit2","carteprodu
 
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
-   this.state={ produits:[],cart:[]}
+    this.state = { produits: [], cart: [], collection: [] };
   }
 
 
@@ -93,10 +92,17 @@ async componentDidMount() {
     this.setState({ cart: kart });
   };
 
-  AddtoCollection=(img)=>{
-
-console.log(img)
-  }
+  AddtoCollection = (img) => {
+    const itemId = img.id || `${img.src}-${img.titre}`;
+    const collection = [...this.state.collection];
+    const index = collection.findIndex((object) => object.id === itemId);
+    if (index === -1) {
+      collection.push({ ...img, id: itemId, qty: 1 });
+    } else {
+      collection[index].qty++;
+    }
+    this.setState({ collection });
+  };
 
   Addmore=(img)=>{
     img.qty++;
@@ -106,10 +112,11 @@ console.log(img)
 
   render() {
     const cartCount = this.state.cart.reduce((sum, p) => sum + p.qty, 0);
+    const collectionCount = this.state.collection.reduce((sum, p) => sum + p.qty, 0);
     return (
       <BrowserRouter>
         <div className="App">
-          <Navigation totalCount={cartCount} />
+          <Navigation totalCount={cartCount} collectionCount={collectionCount} />
           <Routes>
             <Route
               path="/"
@@ -118,6 +125,7 @@ console.log(img)
                   elementscart={this.state.cart}
                   produits={this.state.produits}
                   Addproduct={this.Addproduct}
+                  AddtoCollection={this.AddtoCollection}
                 />
               }
             />
@@ -136,12 +144,11 @@ console.log(img)
             <Route
               path="/Collection"
               element={
-                <div>
-                  <h1>Collection</h1>
-                  <div className='row'>
-                    <InstaCarteproduit Addproduct={this.Addproduct} />
-                  </div>
-                </div>
+                <Collection
+                  collection={this.state.collection}
+                  Addproduct={this.Addproduct}
+                  AddtoCollection={this.AddtoCollection}
+                />
               }
             />
             <Route path="/Messages" element={<h1>Messages</h1>} />

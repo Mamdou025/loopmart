@@ -34,7 +34,23 @@ export class Seller extends React.Component{
         <div className="seller">
         <div className="options">
        <button type="button" className="btn btn-light plus" data-toggle="modal" data-target={"#"+`${this.props.auteur+this.props.montant}`}   ><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
-       <button type="button" className="btn btn-light plus" ><i className="bi bi-bookmark"></i></button>
+       <button
+         type="button"
+         className="btn btn-light plus"
+         onClick={() =>
+           this.props.AddtoCollection({
+             src: this.props.src,
+             auteur: this.props.auteur,
+             montant: this.props.montant,
+             profil: this.props.profil,
+             titre: this.props.titre,
+             description: this.props.description,
+             id: this.props.id,
+           })
+         }
+       >
+         <i className="bi bi-bookmark"></i>
+       </button>
       <button type="button" className="btn btn-light plus" onClick={this.props.Addproduct}><i className="bi bi-cart-plus"></i></button>
   
       </div>
@@ -68,7 +84,23 @@ export class Seller extends React.Component{
         <div className="seller">
         <div className="options">
        <button type="button" className="btn btn-light plus" data-toggle="modal" data-target={"#"+`${this.props.auteur+this.props.montant}`}   ><i className="bi bi-arrows-angle-expand"id="expand"></i></button>
-       <button type="button" className="btn btn-light plus" ><i className="bi bi-bookmark"></i></button>
+       <button
+         type="button"
+         className="btn btn-light plus"
+         onClick={() =>
+           this.props.AddtoCollection({
+             src: this.props.src,
+             auteur: this.props.auteur,
+             montant: this.props.montant,
+             profil: this.props.profil,
+             titre: this.props.titre,
+             description: this.props.description,
+             id: this.props.id,
+           })
+         }
+       >
+         <i className="bi bi-bookmark"></i>
+       </button>
       <button type="button" className="btn btn-light plus" onClick={this.props.Addproduct}><i className="bi bi-cart-plus"></i></button>
   
       </div>
@@ -122,9 +154,33 @@ export class Seller extends React.Component{
         <img  className="rectangle" src={this.props.src}   />
   
   
-      <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Seller
+        titre={this.props.titre}
+        idproductInfo={`${this.props.auteur + this.props.montant + "info"}`}
+        hideModal={this.hideModal}
+        showModal={this.showModal}
+        Addproduct={this.props.Addproduct}
+        AddtoCollection={this.props.AddtoCollection}
+        src={this.props.src}
+        montant={this.props.montant}
+        auteur={this.props.auteur}
+        profil={this.props.profil}
+        description={this.props.description}
+        id={this.props.id}
+      />
 
-      <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} Addproduct={this.props.Addproduct}/>
+      <Modal
+        show={this.state.show}
+        src={this.props.src}
+        montant={this.props.montant}
+        auteur={this.props.auteur}
+        profil={this.props.profil}
+        description={this.props.description}
+        titre={this.props.titre}
+        Addproduct={this.props.Addproduct}
+        AddtoCollection={this.props.AddtoCollection}
+        id={this.props.id}
+      />
   
       
       </div>

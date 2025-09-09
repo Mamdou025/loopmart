@@ -23,7 +23,10 @@ render(){
                     <NavLink to="/" className="nav-link"><span className="menuitem">Accueil <i className="bi bi-house-door-fill"></i>  </span><span className="sr-only">(current)</span></NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="nav-link" to="/Collection">Ma collection <i className="bi bi-bookmarks-fill"></i></NavLink>
+                    <NavLink className="nav-link" to="/Collection">
+                        Ma collection <i className="bi bi-bookmarks-fill"></i>
+                        <span className='badge badge-warning' id='lblCollectionCount'> {this.props.collectionCount} </span>
+                    </NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/Messages">Messages <i className="bi bi-chat-left-fill"></i>  </NavLink>

@@ -24,7 +24,19 @@ export class Mycart extends React.Component{
         {this.props.produits.slice(0).reverse().map(img=>{return(
          
          <div className='col-xl-3  col-md-4  col-sm-6'>
-         <Carteproduit Ajouter2={this.props.Ajouter2} Addproduct={this.props.Addproduct.bind(this, img)}  src={img.src} auteur={img.auteur} montant={img.montant} profil={img.profil} description={img.description} titre={img.titre} key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`} />
+         <Carteproduit 
+           Ajouter2={this.props.Ajouter2}
+           Addproduct={this.props.Addproduct.bind(this, img)}
+           AddtoCollection={this.props.AddtoCollection}
+           id={img.id}
+           src={img.src}
+           auteur={img.auteur}
+           montant={img.montant}
+           profil={img.profil}
+           description={img.description}
+           titre={img.titre}
+           key={`clef${img.montant}`+`${img.profil}`+`${img.description}${img.src}`}
+         />
          </div>
         )
         })}
