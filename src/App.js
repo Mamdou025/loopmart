@@ -128,6 +128,7 @@ console.log(img)
                   totalCount={cartCount}
                   Addmore={this.Addmore}
                   cart={this.state.cart}
+                  Addproduct={this.Addproduct}
                 />
               }
             />
@@ -138,7 +139,7 @@ console.log(img)
                 <div>
                   <h1>Collection</h1>
                   <div className='row'>
-                    <InstaCarteproduit />
+                    <InstaCarteproduit Addproduct={this.Addproduct} />
                   </div>
                 </div>
               }
