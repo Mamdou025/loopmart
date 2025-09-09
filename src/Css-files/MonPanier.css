@@ -1,16 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,500');
 
 /* Cart layout */
-.basket-product {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  border-bottom: 1px solid var(--bs-gray-300);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 2px 2px #88888877;
-  border-radius: 1rem;
-}
+  .basket-product {
+    border-bottom: 1px solid var(--bs-gray-300);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 2px 2px #88888877;
+    border-radius: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
 
 .basket-product:hover {
   background-color: rgba(102, 102, 102, 0.068);
@@ -21,21 +19,13 @@
   border-radius: 0.65rem;
 }
 
-.product-details {
-  flex: 1;
-  padding: 0 1rem;
-}
-
-.price {
-  text-align: right;
-}
-
-.summary {
-  border: 1px solid rgba(170, 170, 170, 0.466);
-  box-shadow: 2px 2px #88888877;
-  border-radius: 1rem;
-  background-color: #fff;
-}
+  .summary {
+    border: 1px solid rgba(170, 170, 170, 0.466);
+    box-shadow: 2px 2px #88888877;
+    border-radius: 1rem;
+    background-color: var(--bs-white);
+    font-family: 'Poppins', sans-serif;
+  }
 
 .summary-total-items {
   color: var(--bs-gray-600);
@@ -70,17 +60,11 @@
   width: 60%;
 }
 
-.summary-delivery-selection {
-  width: 100%;
-}
+  .summary-delivery-selection {
+    width: 100%;
+  }
 
-@media (max-width: 768px) {
-  .basket-product {
-    flex-direction: column;
-    align-items: flex-start;
+  .qty-input {
+    width: 50px;
+    text-align: center;
   }
-  .price {
-    text-align: left;
-    margin-top: 1rem;
-  }
-}
