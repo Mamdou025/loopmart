@@ -65,7 +65,7 @@ async componentDidMount() {
     const data = await response.json();
     const dataWithIds = data.map((p, idx) => ({
       ...p,
-      id: p.id || p._id || `${p.src || ''}-${p.titre || idx}`
+      id: p.id || `${p.src || ''}-${p.titre || idx}`
     }));
     this.setState({ produits: dataWithIds });
     console.log('✅ Products loaded from Supabase:', dataWithIds.length, 'items');
@@ -82,7 +82,7 @@ async componentDidMount() {
 }
 
   Addproduct = (img) => {
-    const productId = img.id || img._id || `${img.src}-${img.titre}`;
+    const productId = img.id || `${img.src}-${img.titre}`;
     const kart = [...this.state.cart];
     const index = kart.findIndex((object) => object.id === productId);
     if (index === -1) {
