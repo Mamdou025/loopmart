@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal } from "./Modal";
 import { Entete } from './Entetes';
+import "../Css-files/MonPanier.css";
 
 function sendCartToWhatsApp(cart) {
   const orderMessage = cart
@@ -17,10 +18,10 @@ export class Pagepanier extends React.Component {
         <Entete titre={"Mon panier"} />
         <div className="container my-4">
           <div className="row">
-            <div className="col-lg-8">
+            <div className="col-12 col-lg-8">
               <ListePanier Addmore={this.props.Addmore} cart={this.props.cart} Addproduct={this.props.Addproduct} />
             </div>
-            <div className="col-lg-4">
+            <div className="col-12 col-lg-4">
               <div className="summary card p-3">
                 <div className="summary-total-items">
                   <span className="total-items">{this.props.totalCount}</span> Items in your Bag
@@ -76,7 +77,9 @@ export class Pagepanier extends React.Component {
     <div className="d-flex justify-content-center row">
         <div className="col-md-10">
             <div className="row p-2 bg-white border rounded">
-                <div className="col-md-3 mt-1"><img className="img-fluid img-responsive rounded product-image" src={this.props.src} alt={this.props.titre}/></div>
+                <div className="col-md-3 mt-1">
+                  <img className="img-fluid img-responsive rounded product-image" src={this.props.src} alt={this.props.titre}/>
+                </div>
                 <div className="col-md-6 mt-1">
                     <h5>{this.props.titre}</h5>
                     <div className="d-flex flex-row">
@@ -84,7 +87,7 @@ export class Pagepanier extends React.Component {
                     </div>
                     <p className="text-justify text-truncate para mb-0">{this.props.description}</p>
                 </div>
-                <div className="align-items-center align-content-center col-md-3 border-left mt-1">
+                <div className="col-md-3 mt-1 d-flex flex-column align-items-center border-start">
                     <div className="d-flex flex-row align-items-center">
                         <h4 className="mr-1">{this.props.montant} $</h4>
                     </div>
@@ -147,9 +150,9 @@ export class Cartepanier extends React.Component{
             </div>
             <div className="col-12 col-md-4 text-md-end">
               <h4 className="mb-1">Prix : {this.props.montant}$</h4>
-              <div className="prdct-qty-container my-2">
+              <div className="d-flex align-items-center justify-content-center my-2">
                 <button className="prdct-qty-btn" type="button"><i className="fa fa-minus"></i></button>
-                <input type="text" name="qty" className="qty-input-box" disabled value="1" />
+                <input type="text" name="qty" className="qty-input" disabled value="1" />
                 <button className="prdct-qty-btn" type="button" onClick={this.Update}><i className="fa fa-plus"></i></button>
               </div>
               <h5 className="mt-2">subtotal: {this.props.montant * this.props.qty}$ </h5>
