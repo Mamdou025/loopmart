@@ -1,4 +1,3 @@
-import { Commentaires, Description } from "./Commentaires";
 import React from "react";
 import { Options } from "./Commentaires";
 
@@ -18,7 +17,6 @@ export class Modal extends React.Component{
   
     render(){
       const {
-        show,
         src,
         montant,
         auteur,
@@ -69,14 +67,6 @@ export class Modal extends React.Component{
                 </div>
                 <div className="modalcell2">
                   <Options
-                    iddesc={`${auteur + montant + montant}desc`}
-                    idcom={`${auteur + montant + montant}`}
-                  />
-
-                  <Description
-                    show={show}
-                    idcom={`${auteur + montant + montant}`}
-                    iddesc={`${auteur + montant + montant}desc`}
                     src={src}
                     montant={montant + '$'}
                     auteur={auteur}
@@ -84,18 +74,6 @@ export class Modal extends React.Component{
                     description={description}
                     titre={titre}
                     Addproduct={Addproduct}
-                  />
-
-                  <Commentaires
-                    show={show}
-                    idcom={`${auteur + montant + montant}`}
-                    iddesc={`${auteur + montant + montant}desc`}
-                    src={src}
-                    montant={montant + '$'}
-                    auteur={auteur}
-                    profil={profil}
-                    description={description}
-                    titre={titre}
                   />
                 </div>
               </div>
