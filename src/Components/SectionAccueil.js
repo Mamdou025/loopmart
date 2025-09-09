@@ -6,13 +6,17 @@ export class SectionAccueil extends React.Component{
         return(
             <div className="sectionaccueil">
                    <div className="overlap-group">
-                       <input className="inputtext"></input>
-                      <button className="rectangle-66"><i className="bi bi-search "></i></button>
+                       <input 
+                         className="inputtext"
+                         value={this.props.searchQuery || ''}
+                         onChange={(e) => this.props.onSearch && this.props.onSearch(e.target.value)}
+                       />
+                      <button className="rectangle-66" onClick={() => this.props.onSearch && this.props.onSearch(this.props.searchQuery || '')}><i className="bi bi-search "></i></button>
                    </div>
             </div>
 
         )
-        
+
         
     
     }
