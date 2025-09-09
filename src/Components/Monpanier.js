@@ -24,7 +24,7 @@ export class Pagepanier extends React.Component {
         <div className="container my-4">
           <div className="row">
             <div className="col-12 col-lg-8">
-              <ListePanier Addmore={this.props.Addmore} cart={this.props.cart} Addproduct={this.props.Addproduct} />
+              <ListePanier Addmore={this.props.Addmore} cart={this.props.cart} Addproduct={this.props.Addproduct} AddtoCollection={this.props.AddtoCollection} />
             </div>
             <div className="col-12 col-lg-4">
               <div className="summary card p-3">
@@ -119,7 +119,7 @@ export class Pagepanier extends React.Component {
         </div>
     </div>
 </div>
-<Modal src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} Addproduct={this.props.Addproduct} />
+<Modal src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} id={this.props.id} Addproduct={this.props.Addproduct} AddtoCollection={this.props.AddtoCollection} />
 </div>)
     }
 
@@ -169,7 +169,7 @@ export class Cartepanier extends React.Component{
               <h5 className="mt-2">subtotal: {this.props.montant * this.props.qty}$ </h5>
             </div>
           </div>
-          <Modal src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} Addproduct={this.props.Addproduct} />
+          <Modal src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre} id={this.props.id} Addproduct={this.props.Addproduct} AddtoCollection={this.props.AddtoCollection} />
         </div>
       )
     }
@@ -183,6 +183,7 @@ export class Cartepanier extends React.Component{
         <Cartepanier
           Addmore={this.props.Addmore.bind(this, img)}
           Addproduct={this.props.Addproduct.bind(this, img)}
+          AddtoCollection={this.props.AddtoCollection}
           id={img.id}
           titre={img.titre}
           key={img.id}

@@ -23,7 +23,9 @@ export class Modal extends React.Component{
         profil,
         description,
         titre,
+        id,
         Addproduct,
+        AddtoCollection,
       } = this.props;
       return (
         <div
@@ -73,7 +75,9 @@ export class Modal extends React.Component{
                     profil={profil}
                     description={description}
                     titre={titre}
+                    id={id}
                     Addproduct={Addproduct}
+                    AddtoCollection={AddtoCollection}
                   />
                 </div>
               </div>
