@@ -1,5 +1,6 @@
 import React from "react";
 import { images } from "../data/images";
+import { handleWhatsApp } from "./Carte";
 
 
 
@@ -153,7 +154,7 @@ export class Description extends React.Component{
                 <div className="optionscontact">
                     <div className="opt1">
                     <h6>Contacter</h6>
-                    <button type="button" className="btn btn-light plus"><i className="bi bi-whatsapp bigger"></i></button>
+                    <button type="button" className="btn btn-light plus" onClick={() => handleWhatsApp({titre: this.props.titre, montant: this.props.montant, src: this.props.src})}><i className="bi bi-whatsapp bigger"></i></button>
                     </div>
                     <div className="opt1">
                     <h6>Ajouter au panier</h6>
