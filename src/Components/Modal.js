@@ -53,10 +53,10 @@ export class Modal extends React.Component{
           <div className="modalcell2">
             <Options  iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`}   idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} />
             
-            <Description  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
-      
-           
-            <Commentaires  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+            <Description  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre}/>
+
+
+            <Commentaires  show={this.props.show} idcom={`${this.props.auteur+this.props.montant+this.props.montant}`} iddesc={`${this.props.auteur+this.props.montant+this.props.montant}desc`} src={this.props.src}  montant={this.props.montant + '$'} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre}/>
       
           </div>
         </div>

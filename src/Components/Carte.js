@@ -4,6 +4,14 @@ import { Modal } from "./Modal"
 import axios from 'axios';
 
 
+export const handleWhatsApp = (item) => {
+  const imageUrl = item.src && item.src.startsWith('http') ? item.src : `${window.location.origin}${item.src}`;
+  const message = `${item.titre} - ${item.montant} ${imageUrl}`;
+  const url = `https://wa.me/5147727974?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+};
+
+
 
 
 
@@ -116,7 +124,7 @@ export class Seller extends React.Component{
   
       <Seller titre={this.props.titre} idproductInfo={`${this.props.auteur+this.props.montant+"info"}`} hideModal={this.hideModal} showModal={this.showModal} Addproduct={this.props.Addproduct} src={this.props.src} montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
       
-      <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description}/>
+      <Modal show={this.state.show} src={this.props.src}  montant={this.props.montant} auteur={this.props.auteur} profil={this.props.profil} description={this.props.description} titre={this.props.titre}/>
   
       
       </div>
