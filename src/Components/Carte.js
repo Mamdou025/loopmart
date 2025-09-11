@@ -186,6 +186,7 @@ export class Seller extends React.Component{
         id={this.props.id}
         Addproduct={this.props.Addproduct}
         AddtoCollection={this.props.AddtoCollection}
+        category={this.props.category}
       />
   
       

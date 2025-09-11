@@ -9,6 +9,7 @@ import { AjouterProduit } from './Components/Ajouterproduit';
 import {Pagepanier} from './Components/Monpanier'
 import {Mycart} from './Components/Accueil'
 import CollectionList from './Components/CollectionList';
+import CategoryPage from './Components/CategoryPage';
 
 
 
@@ -114,10 +115,11 @@ async componentDidMount() {
 
   render() {
     const cartCount = this.state.cart.reduce((sum, p) => sum + p.qty, 0);
+    const categories = Array.from(new Set(this.state.produits.map(p => p.category))).filter(Boolean);
     return (
       <BrowserRouter>
         <div className="App">
-          <Navigation totalCount={cartCount} />
+          <Navigation totalCount={cartCount} categories={categories} />
           <Routes>
             <Route
               path="/"
@@ -147,6 +149,16 @@ async componentDidMount() {
             <Route path="/Ajouter" element={<AjouterProduit />} />
             <Route path="/Collection" element={<CollectionList items={this.state.collection} Addproduct={this.Addproduct} AddtoCollection={this.AddtoCollection} />} />
             <Route path="/Messages" element={<h1>Messages</h1>} />
+            <Route
+              path="/category/:name"
+              element={
+                <CategoryPage
+                  produits={this.state.produits}
+                  Addproduct={this.Addproduct}
+                  AddtoCollection={this.AddtoCollection}
+                />
+              }
+            />
           </Routes>
         </div>
       </BrowserRouter>

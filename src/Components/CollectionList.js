@@ -20,6 +20,7 @@ export const CollectionList = ({ items, Addproduct, AddtoCollection }) => {
             profil={img.profil}
             description={img.description}
             titre={img.titre}
+            category={img.category}
           />
         </div>
       ))}
