@@ -1,10 +1,11 @@
 import React from "react";
-import {images} from '../data/images'
-import { Link,NavLink } from "react-router-dom";
+import { images } from '../data/images';
+import { NavLink } from "react-router-dom";
 import { SectionAccueil2 } from "./SectionAccueil";
 
-export class Navigation extends React.Component{
+export class Navigation extends React.Component {
 render(){
+    const { categories = [] } = this.props;
     return(<div>
         
       
@@ -28,16 +29,14 @@ render(){
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/Messages">Messages <i className="bi bi-chat-left-fill"></i>  </NavLink>
                 </li>
-
-              
-
-
+                {categories.map((cat) => (
+                  <li className="nav-item" key={cat}>
+                    <NavLink className="nav-link" to={`/category/${cat}`}>{cat}</NavLink>
+                  </li>
+                ))}
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/Ajouter">Ajouter un produit  <i className="bi bi-plus-square-fill"></i></NavLink>
                 </li>
-
-                
-
                 <li className="nav-item">
                     <NavLink to="/panier" className="nav-link" >Panier <i className="bi bi-bag-fill"></i><span className='badge badge-warning' id='lblCartCount'> {this.props.totalCount} </span></NavLink>
                 </li>

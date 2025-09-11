@@ -1,5 +1,6 @@
 import React from "react";
 import { Options } from "./Commentaires";
+import Breadcrumbs from './Breadcrumbs';
 
 
 
@@ -26,6 +27,7 @@ export class Modal extends React.Component{
         id,
         Addproduct,
         AddtoCollection,
+        category,
       } = this.props;
       return (
         <div
@@ -40,6 +42,7 @@ export class Modal extends React.Component{
             <div className="modalelements">
               <div className="modalrow1">
                 <div className="modalcell">
+                  <Breadcrumbs extra={[category, titre]} />
                   <div>
                     <div className="seller">
                       <div className="options">
