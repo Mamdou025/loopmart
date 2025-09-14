@@ -26,14 +26,16 @@ render(){
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/Collection">Ma collection <i className="bi bi-bookmarks-fill"></i></NavLink>
                 </li>
-                <li className="nav-item">
-                    <NavLink className="nav-link" to="/Messages">Messages <i className="bi bi-chat-left-fill"></i>  </NavLink>
+                <li className="nav-item dropdown">
+                    <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Catégories</a>
+                    <div className="dropdown-menu">
+                        {categories.map(cat => (
+                            <NavLink key={cat} className="dropdown-item" to={`/category/${cat}`}>
+                                {cat}
+                            </NavLink>
+                        ))}
+                    </div>
                 </li>
-                {categories.map((cat) => (
-                  <li className="nav-item" key={cat}>
-                    <NavLink className="nav-link" to={`/category/${cat}`}>{cat}</NavLink>
-                  </li>
-                ))}
                 <li className="nav-item">
                     <NavLink className="nav-link" to="/Ajouter">Ajouter un produit  <i className="bi bi-plus-square-fill"></i></NavLink>
                 </li>
@@ -53,7 +55,7 @@ render(){
            </div>
 
     
-    )
+  )
 }
 
 }
