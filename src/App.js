@@ -148,7 +148,6 @@ async componentDidMount() {
             />
             <Route path="/Ajouter" element={<AjouterProduit />} />
             <Route path="/Collection" element={<CollectionList items={this.state.collection} Addproduct={this.Addproduct} AddtoCollection={this.AddtoCollection} />} />
-            <Route path="/Messages" element={<h1>Messages</h1>} />
             <Route
               path="/category/:name"
               element={
